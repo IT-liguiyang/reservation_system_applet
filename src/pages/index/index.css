@@ -1,0 +1,39 @@
+.index {
+  width: 100%;
+}
+.index .index-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-image: url('../../static/head/head1.png');
+  height: 360px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.index .index-head .index-head-text {
+  color: white;
+  font-size: 45px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: 'SimHei';
+}
+.index .index-head .index-head-serach {
+  display: flex;
+  margin-left: 5%;
+  width: 45%;
+}
+.index .index-head .index-head-serach .index-head-icon {
+  margin-top: 15px;
+  margin-left: 10px;
+  z-index: 999;
+}
+.index .index-head .index-head-serach .index-head-input {
+  height: 60px;
+  width: 100%;
+  margin-left: -45px;
+  padding-left: 60px;
+  background-color: #5cac57;
+  border-radius: 30px;
+  font-size: 30px;
+}
