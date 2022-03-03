@@ -2,14 +2,17 @@
 
 export default defineAppConfig({
   pages: [
-    'pages/index/index',
-    'pages/dynamic/index',
-    'pages/news/index',
-    'pages/user/index',
+    'pages/index/index',  // 小程序首页
+    'pages/dynamic/index',  // 动态首页
+    'pages/news/index',  // 新闻首页
+    'pages/user/index',  // 我的首页
+    'pages/reservation/index',  // 预约首页
+    'pages/search/index',  // 搜索页面
+    
   ],
   window: {
     backgroundTextStyle: 'light',
-    navigationBarBackgroundColor: '#F6D561',
+    navigationBarBackgroundColor: '#ffffff',
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black'
   },
@@ -26,16 +29,16 @@ export default defineAppConfig({
         text:'首页'
       },
       {
-        pagePath: 'pages/dynamic/index',
-        iconPath: './static/tabBar/dynamic.png',
-        selectedIconPath: './static/tabBar/dynamic-blue.png',
-        text:'动态'
-      },
-      {
         pagePath: 'pages/news/index',
         iconPath: './static/tabBar/news.png',
         selectedIconPath: './static/tabBar/news-blue.png',
         text:'新闻'
+      },
+      {
+        pagePath: 'pages/dynamic/index',
+        iconPath: './static/tabBar/dynamic.png',
+        selectedIconPath: './static/tabBar/dynamic-blue.png',
+        text:'动态'
       },
       {
         pagePath: 'pages/user/index',

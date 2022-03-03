@@ -7,10 +7,6 @@
       "error",
       2
     ],
-    // "linebreak-style": [
-    //   "error",
-    //   "windows"
-    // ],
     "quotes": [ // 字符串用单引号
       "error",
       "single"

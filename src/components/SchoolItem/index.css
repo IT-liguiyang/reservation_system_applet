@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: 96%;
+  height: 160px;
+  margin-top: 20px;
+}
+.container .container-image {
+  width: 40%;
+  height: 160px;
+}
+.container .school {
+  margin-left: 2%;
+  margin-top: 10px;
+  width: 60%;
+  height: 160px;
+}
+.container .school .school-name {
+  display: block;
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.container .school .school-address {
+  display: block;
+  font-size: 30px;
+}
+.container .school .school-distance {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.container .school .school-label {
+  width: 20%;
+  height: 30px;
+  margin-right: 10px;
+  color: #cac4c4;
+  background-color: #faf6f6;
+  font-size: 30px;
+  border: #83f3ed solid 1px;
+}
