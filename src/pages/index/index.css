@@ -7,8 +7,8 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 360px;
-  background-image: url('../../static/head/head1.png');
+  height: 360rpx;
+  background-image: url('../../static/head/head.png');
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
 }
@@ -43,11 +43,48 @@
   width: 100%;
   height: 150px;
 }
-.index .index-hot {
+.index .hot-school {
   width: 100%;
-  margin-left: 2%;
+  padding: 2%;
 }
-.index .index-hot .index-hot-title {
-  font-size: 40px;
+.index .hot-school .title {
+  font-size: 35px;
   font-weight: bold;
+  color: #797878;
+}
+.index .hot-school .container {
+  height: 220px;
+}
+.index .hot-school .container .scrollItem {
+  width: 200px;
+  margin-right: 10px;
+}
+.index .hot-school .container .scrollItem .scrollItem-image {
+  width: 200px;
+  height: 160px;
+  border-radius: 10px;
+}
+.index .hot-school .container .scrollItem .scrollItem-text {
+  font-size: 30px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.index .school-list {
+  width: 100%;
+  padding: 2%;
+}
+.index .school-list .title {
+  font-size: 35px;
+  font-weight: bold;
+  color: #797878;
+}
+.index .school-list .more {
+  float: right;
+  margin-right: 4%;
+  font-size: 30px;
+  padding: 5px 10px;
+  border: 1px solid #797878;
+  border-radius: 10%;
 }

@@ -6,7 +6,8 @@ import {
   Input, 
   Icon, 
   // Button,
-  Image
+  Image,
+  ScrollView
 } from '@tarojs/components';
 
 import MySwiper from '../../components/MySwiper';
@@ -51,13 +52,25 @@ const Index = () => {
     });
   };
 
+  // 点击查看更多学校
+  const showMoreSchool = () => {
+    Taro.navigateTo({
+      url:'../search/index'
+    });
+  };
+
   Taro.onPullDownRefresh = () => {};//下拉事件
   Taro.stopPullDownRefresh();//停止下拉动作过渡
  
   Taro.onReachBottom = () => {};//上拉事件监听
 
+  const basicImgUrl = 'http://localhost:5000/upload/';   // 图片上传的 baseUrl
+
+  console.log('666', schoolList);
+
   return(
     <View className='index'>
+      {/* 搜索框 */}
       <View className='index-head'>
         <Text className='index-head-text'>筑城文体通</Text>
         <View className='index-head-serach'>
@@ -65,11 +78,38 @@ const Index = () => {
           <Input className='index-head-input' onClick={handleSearch} placeholder='搜索'></Input>
         </View>
       </View>
+
       {/* 轮播图 */}
       <MySwiper imageList={imageList} />
+
+      {/* 预约入口 */}
       <Image className='reservation-image' onClick={handleOnclickReservationEntry} src={reservation_entry}></Image>
-      <View className='index-hot'>
-        <Text className='index-hot-title'>热门学校</Text>
+      
+      {/* 热门学校 */}
+      <View className='hot-school'>
+        <View className='title'>热门学校</View>
+        <ScrollView 
+          className='container' 
+          enableFlex='true'
+          scrollX
+        >
+          {
+            schoolList.map((item) => {
+              return (
+                <View className='scrollItem' key={item._id}>
+                  <Image className='scrollItem-image' src={basicImgUrl+item.image[0]}></Image>
+                  <Text className='scrollItem-text'>{item.school[1]}</Text>
+                </View>
+              );
+            })
+          }
+        </ScrollView>
+      </View>
+
+      {/* 所有学校 */}
+      <View className='school-list'>
+        <Text className='title'>学校列表</Text>
+        <Text className='more' onClick={showMoreSchool}>查看更多</Text>
         {/* 学校列表 */}
         <SchoolItem schoolList={schoolList} />
       </View>
