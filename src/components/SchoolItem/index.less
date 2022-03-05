@@ -21,8 +21,12 @@
             margin-bottom: 10px;
         }
         .school-address {
-            display: block;
             font-size: 30px;
+            // 单行文字溢出隐藏，省略号代替
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .school-distance {
             margin-bottom: 10px;

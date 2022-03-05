@@ -21,8 +21,11 @@
   margin-bottom: 10px;
 }
 .container .school .school-address {
-  display: block;
   font-size: 30px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .container .school .school-distance {
   margin-bottom: 10px;

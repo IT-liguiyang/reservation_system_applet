@@ -31,7 +31,7 @@ const SchoolItem = (props) => {
               <Image className='container-image' src={basicImgUrl+item.image[0]}></Image>
               <View className='school'>
                 <Text className='school-name'>{item.school[1]}</Text>
-                <Text className='school-address'>{item.address.length > 13 ? item.address.slice(0,13)+'...':item.address}</Text>
+                <Text className='school-address'>{item.address}</Text>
                 {
                   item.open_areas.splice(0,4).map((childItem, index) => {  // 使用 splice 控制最多可以展示4个
                     return(

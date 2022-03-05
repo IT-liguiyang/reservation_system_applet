@@ -15,7 +15,7 @@ const MySwiper = (props) => {
         className='index-swiper'
         indicatorColor='#999'
         indicatorActiveColor='#333'
-        indicatorDots='false'
+        // indicatorDots='false'
         vertical='false'
         autoplay='false'
         interval='2000'
