@@ -1,0 +1,192 @@
+import { useState } from 'react';
+import Taro from '@tarojs/taro';
+import { View, Image, Text, Radio, Button, Input } from '@tarojs/components';
+import logo from '../../static/login/li-without-border.png';
+import { COUNT_DOWN } from '../../utils/constants';
+
+import './index.less';
+
+const Login = ()=>{
+
+  const [ isChecked, setIsChecked ] = useState(true);  // 是否同意协议
+  const [ inputUsername, setInputUsername ] = useState('');  // 接收输入的用户名
+  const [ verificationCode, setVerificationCode ] = useState('');  // 随机生成的验证码
+  const [ inputVerificationCode, setInputVerificationCode ] = useState('');  // 接收用户输入的验证码
+  const [ btnText, setBtnText ] = useState('获取验证码');  // 设置获取验证码按钮的文案
+  const [ isDisable, setIsDisable ] = useState(false);  // 设置获取验证码按钮是否禁用
+  const [ timer, setTimer ] = useState(0);  // 设置验证码定时器的 id
+  
+  // 点击是否同意注册、隐私协议
+  const changeChecked = () => {
+    console.log(1111);
+    setIsChecked(!isChecked);
+  };
+
+  // 获取用户输入的账号：手机号
+  const getUsername = (e) => {
+    const reg = new RegExp('(13[0-9]|14[5-9]|15[0-3,5-9]|16[2,5,6,7]|17[0-8]|18[0-9]|19[0-3,5-9])\\d{8}', 'g');
+    const reg_result = reg.exec(e.detail.value);
+    console.log(e.detail.value);
+    console.log(reg_result);
+    if (reg_result) {  // 正确匹配
+      setInputUsername(e.detail.value);  
+    } else {
+      Taro.showToast({
+        title: '手机号格式错误',
+        icon: 'error',
+        duration: 1000
+      });
+    }
+  };
+
+  // const getPassword = (e) => {
+  //   const reg = new RegExp('[a-zA-Z][a-zA-Z0-9_]{8,12}', 'g');
+  //   const reg_result = reg.exec(e.detail.value);
+  //   if (reg_result) {
+  //     setInputPassword(e.detail.value);
+  //   } else {
+  //     Taro.showToast({
+  //       title: '密码格式错误',
+  //       icon: 'error',
+  //       duration: 1000
+  //     });
+  //   }
+  // };
+
+  // 点击获取验证码，并调用云函数发送含验证码的信息到用户手机上
+  const getVerificationCode = () => {
+    if(inputUsername === '' ){
+      Taro.showToast({
+        title: '请先输入手机号！'
+      });
+      return;
+    }
+    var count_down = COUNT_DOWN;  // 常量重新赋值，下方需改变
+    const timer1 = setInterval(() => {
+      setTimer(timer1);  // 更新定时器 id
+
+      console.log(count_down);
+      if (count_down > 0) {
+        document.getElementById('verification-btn').style.color='#b3b3cc';  // 设置按钮点击后的颜色
+        count_down= count_down - 1;
+        setBtnText('重新获取' + count_down);
+        setIsDisable(true);  // 设置按钮无法被点击
+      }
+      else {
+        document.getElementById('verification-btn').style.color='#2b69dd';  // 设置按钮原本的颜色
+        setBtnText('获取验证码');
+        setIsDisable(false);  // 设置按钮可被点击
+        clearInterval(timer);
+      }
+    }, 1000);
+
+    const code = getRandomCode(6);  // 得到6位数的验证码
+    console.log(code);
+    setVerificationCode(code);
+    // 调用云函数向用户发送验证码
+    // Taro.cloud.callFunction({
+    //   name: 'sendMessage',
+    //   data: {
+    //     phone: inputUsername,
+    //     code: code
+    //   }
+    // }).then(res=>{
+    //   console.log('成功', res);
+    // }).catch(res=>{
+    //   console.log('失败', res);
+    // });
+  };
+
+  // 生成随机验证码
+  const getRandomCode = (n) => {
+    const chars = ['1','2','3','4','5','6','7','8','9','0'];
+    var res = '';
+    for(let i=0; i<n; i++){
+      var id = Math.ceil(Math.random()*9);
+      res += chars[id];
+    }
+    return res;
+  };
+
+  // 获取用户输入的验证码
+  const getInputCode = (e) => {
+    console.log(e.detail.value);
+    setInputVerificationCode(e.detail.value);
+  };
+
+  // 点击登录的回调
+  const login = () => {
+    if(inputUsername === '' ){  // 判断手机号是否为空
+      Taro.showToast({
+        title: '请输入手机号！'
+      });
+      return;
+    }
+    if(inputVerificationCode === '' ){  // 判断验证码是否为空
+      Taro.showToast({
+        title: '请输入验证码！'
+      });
+      return;
+    }
+    if( isChecked === false) {
+      Taro.showToast({
+        title: '请先勾选用户注册协议、隐私协议'
+      });
+      return;
+    };
+    if(inputVerificationCode !== '' && inputVerificationCode === verificationCode ){
+      clearInterval(timer);  // 清除定时器
+      Taro.switchTab({  // 跳转到首页
+        url:'../index/index'
+      });
+    } else {
+      Taro.showToast({
+        title: '验证码错误！'
+      });
+    }
+    
+  };
+
+  // useEffect(() => {
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // });
+
+  return(
+    <View className='container'>
+      <View className='logo-name'>
+        <Image className='logo' src={logo}></Image>
+        <View className='name'>筑城文体通</View>
+      </View>
+      <View className='slogan'>开&nbsp;&nbsp;始&nbsp;&nbsp;运&nbsp;&nbsp;动，迈&nbsp;&nbsp;向&nbsp;&nbsp;健&nbsp;&nbsp;康</View>
+      <View className='agreement'>
+        <Radio className='check-agreement' checked={isChecked} onClick={changeChecked}></Radio>
+        <Text className='agreement-left'>我已阅读并同意</Text>
+        <Text className='agreement-right'>用户注册协议、隐私协议</Text>
+      </View>
+      <View className='username'>
+        <View className='username-text'>用户名：</View>
+        <Input className='username-input' onBlur={getUsername} placeholder='请输入手机号'></Input>
+      </View>
+      
+      {/* <View className='password'>
+        <View className='password-text'>密&nbsp;&nbsp;&nbsp;码：</View>
+        <Input type='password' className='password-input' onBlur={getPassword}  placeholder='同意并输入密码'></Input>
+      </View> */}
+
+      <View className='verification'>
+        <View className='verification-text'>验证码：</View>
+        <Input className='verification-input' onBlur={getInputCode} placeholder='手机验证码'>
+        </Input>
+      </View>
+      <Button id='verification-btn' className='verification-btn' disabled={isDisable} onClick={getVerificationCode}>{btnText}</Button>
+
+      <Button className='login-btn' onClick={login}>登录</Button>
+
+      <View className='notice'>提示：首次使用，点击登录后即可完成注册！</View>
+    </View>
+  );
+};
+
+export default Login;

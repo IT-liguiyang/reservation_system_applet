@@ -1,0 +1,137 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 100px;
+}
+.container .logo-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .logo-name .logo {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+.container .logo-name .name {
+  font-size: 70px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+.container .slogan {
+  font-size: 35px;
+}
+.container .agreement {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+  font-size: 32px;
+}
+.container .agreement .check-agreement {
+  zoom: 50%;
+}
+.container .agreement .agreement-left {
+  color: #7a7a7c;
+}
+.container .agreement .agreement-right {
+  color: #5573f7;
+}
+.container .username {
+  display: flex;
+  width: 90%;
+}
+.container .username .username-text {
+  font-size: 39px;
+  width: 200px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.container .username .username-input {
+  width: 65%;
+  height: 60px;
+  margin-left: -10%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 35px;
+  color: #636262;
+  background-color: #ece9e9;
+}
+.container .password {
+  display: flex;
+  width: 90%;
+}
+.container .password .password-text {
+  font-size: 39px;
+  width: 200px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.container .password .password-input {
+  width: 65%;
+  height: 60px;
+  margin-left: -10%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 35px;
+  color: #636262;
+  background-color: #ece9e9;
+}
+.container .verification {
+  display: flex;
+  width: 90%;
+}
+.container .verification .verification-text {
+  font-size: 39px;
+  width: 200px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.container .verification .verification-input {
+  width: 65%;
+  height: 60px;
+  margin-left: -10%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 35px;
+  color: #636262;
+  background-color: #ece9e9;
+}
+.container .verification-btn {
+  position: relative;
+  width: 25%;
+  font-size: 36px;
+  margin-bottom: 2%;
+  margin-top: -13.5%;
+  margin-right: 11%;
+  padding: 0;
+  z-index: 999;
+  color: #2b69dd;
+  border: #ece9e9;
+  background-color: #ece9e9;
+}
+.container .login-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 94%;
+  height: 90px;
+  font-size: 40px;
+  margin-top: 30px;
+  border-radius: 10px;
+  z-index: 999;
+  color: oldlace;
+  background-color: #2b69dd;
+}
+.container .notice {
+  font-size: 30px;
+  margin-top: 5%;
+  color: #838280;
+}
