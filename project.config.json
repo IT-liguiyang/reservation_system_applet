@@ -2,7 +2,8 @@
     "miniprogramRoot": "dist/",
     "projectname": "reservation_system_applet",
     "description": "",
-    "appid": "wx0d872acac097a51f",
+    "cloudfunctionRoot": "cloud/",
+    "appid": "wx78f66c81537bec1b",
     "setting": {
         "urlCheck": false,
         "es6": false,
@@ -30,7 +31,7 @@
             "disablePlugins": [],
             "outputPath": ""
         },
-        "useIsolateContext": true,
+        "useIsolateContext": false,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
@@ -42,5 +43,6 @@
         "ignoreUploadUnusedFiles": true
     },
     "compileType": "miniprogram",
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {}
 }
