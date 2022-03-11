@@ -19,6 +19,7 @@ import swiper1 from '../../static/swiper/1.png';
 import swiper2 from '../../static/swiper/2.png';
 import swiper3 from '../../static/swiper/3.png';
 import reservation_entry from '../../static/reservation-entry/reservation-entry.png';
+import config from '../../api/config';  // 引入图片的公共路径
 
 const Index = () => {
 
@@ -27,7 +28,7 @@ const Index = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect( async () => {
     // 发送请求
-    const result = await reqSchools('1', '6');
+    const result = await reqSchools(1, 6);
     console.log('1111', result.data.list);
 
     setSchoolList(result.data.list);
@@ -64,8 +65,6 @@ const Index = () => {
  
   Taro.onReachBottom = () => {};//上拉事件监听
 
-  const basicImgUrl = 'http://localhost:5000/upload/';   // 图片上传的 baseUrl
-
   console.log('666', schoolList);
 
   return(
@@ -91,13 +90,16 @@ const Index = () => {
         <ScrollView 
           className='container' 
           enableFlex='true'
+          scrollHeight='0'
           scrollX
+          scrollWithAnimation
+          showScrollbar='false'  // 是否显示滚动条
         >
           {
             schoolList.map((item) => {
               return (
                 <View className='scrollItem' key={item._id}>
-                  <Image className='scrollItem-image' src={basicImgUrl+item.image[0]}></Image>
+                  <Image className='scrollItem-image' src={config.basicImgUrl+item.image[0]}></Image>
                   <Text className='scrollItem-text'>{item.school[1]}</Text>
                 </View>
               );
