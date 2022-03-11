@@ -7,6 +7,7 @@ import {
 import PropTypes from 'prop-types';
 
 import './index.css';
+import config from '../../api/config';
 
 const SchoolItem = (props) => {
 
@@ -20,15 +21,13 @@ const SchoolItem = (props) => {
     console.log(222, e);
   };
 
-  const basicImgUrl = 'http://localhost:5000/upload/';   // 图片上传的 baseUrl
-
   return(
     <View>
       {
         props.schoolList.map((item) => {
           return (
             <View key={item._id} className='container' onClick={handleOnClick}>
-              <Image className='container-image' src={basicImgUrl+item.image[0]}></Image>
+              <Image className='container-image' src={config.basicImgUrl+item.image[0]}></Image>
               <View className='school'>
                 <Text className='school-name'>{item.school[1]}</Text>
                 <Text className='school-address'>{item.address}</Text>
