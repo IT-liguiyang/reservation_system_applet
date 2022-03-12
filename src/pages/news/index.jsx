@@ -5,6 +5,7 @@ import reqNews from './service';
 
 import './index.less';
 import newImg from '../../static/news/notfound-img.png';
+import { BASE_IMG_URL } from '../../utils/constants';
 
 const News = () => {
 
@@ -18,6 +19,14 @@ const News = () => {
 
     setNewsList(result.data.list);
   }, []);
+
+  // 得到图片的路径
+  const getImgSrc = (item) => {
+    const srcReg = /\bsrc\b\s*=\s*[\'\"]?([^\'\"]*)[\'\"]?/i; // 匹配src的值
+    const src = item.pub_content[0].match(srcReg); 
+    const realSrc =  src ? src[1].split('upload/') : ''; // 通过截取得到 image-1647047100634.jpg
+    return realSrc[1];
+  };
 
   console.log(newsList);
 
@@ -42,7 +51,7 @@ const News = () => {
                     </View>
                   </View>
                 </View>
-                <Image className='news-item-image' src={newImg}></Image>
+                <Image className='news-item-image' src={getImgSrc(item) ? (BASE_IMG_URL + getImgSrc(item)) : newImg}></Image>
               </View>
             );
           })
