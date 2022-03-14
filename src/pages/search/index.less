@@ -1,0 +1,87 @@
+.index {
+    width: 100%;
+    height: 100%;
+
+    .index-head {
+        width: 100%;
+        height: 100px;
+        margin-left: 3%;
+        border-bottom: rgb(236, 234, 234) solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .index-head-serach {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            background-color: rgb(243, 240, 240);
+            padding-left: 15px;
+            border-radius: 37px;;
+
+            .picker-container{
+                font-size: 70px;
+                width: 80px;
+
+                .picker-item{
+                    font-size: 35px;
+                    padding-left: 10px;
+                }
+            }
+
+            .iconfont {
+                font-size: 40px;
+                font-weight: bolder;
+            }
+
+            .show {
+                display: none;
+            }
+
+            .input-container {
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: 75%;
+                height: 74px;
+                background-color: rgb(243, 240, 240);
+                border-radius: 37px;
+        
+                .icon-search {
+                    position: absolute;
+                    font-size: 35px;
+                    left: 15px;
+                }
+        
+                .search-input {
+                    margin-left: 60px;
+                }
+        
+                .placeholder {
+                    font-size: 33px;
+                    color: rgb(128, 127, 125);
+                }
+        
+        
+            }
+        }
+
+        .cancel-button{
+            height: 60px;
+            width: 15%;
+            margin-left: 1%;
+            margin-top: 1%;
+            font-size: 35px;
+        }
+    }
+
+    .school-list {
+        width: 96%;
+        margin-left: 2%;
+
+        // 解决和SchoolItem中的样式冲突
+        .container {
+            width: 100%;
+        }
+    }
+}

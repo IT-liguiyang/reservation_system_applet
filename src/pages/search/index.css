@@ -1,0 +1,71 @@
+.index {
+  width: 100%;
+  height: 100%;
+}
+.index .index-head {
+  width: 100%;
+  height: 100px;
+  margin-left: 3%;
+  border-bottom: #eceaea solid 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index .index-head .index-head-serach {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  background-color: #f3f0f0;
+  padding-left: 15px;
+  border-radius: 37px;
+}
+.index .index-head .index-head-serach .picker-container {
+  font-size: 70px;
+  width: 80px;
+}
+.index .index-head .index-head-serach .picker-container .picker-item {
+  font-size: 35px;
+  padding-left: 10px;
+}
+.index .index-head .index-head-serach .iconfont {
+  font-size: 40px;
+  font-weight: bolder;
+}
+.index .index-head .index-head-serach .show {
+  display: none;
+}
+.index .index-head .index-head-serach .input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 75%;
+  height: 74px;
+  background-color: #f3f0f0;
+  border-radius: 37px;
+}
+.index .index-head .index-head-serach .input-container .icon-search {
+  position: absolute;
+  font-size: 35px;
+  left: 15px;
+}
+.index .index-head .index-head-serach .input-container .search-input {
+  margin-left: 60px;
+}
+.index .index-head .index-head-serach .input-container .placeholder {
+  font-size: 33px;
+  color: #807f7d;
+}
+.index .index-head .cancel-button {
+  height: 60px;
+  width: 15%;
+  margin-left: 1%;
+  margin-top: 1%;
+  font-size: 35px;
+}
+.index .school-list {
+  width: 96%;
+  margin-left: 2%;
+}
+.index .school-list .container {
+  width: 100%;
+}
