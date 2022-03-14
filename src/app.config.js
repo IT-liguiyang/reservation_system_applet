@@ -3,12 +3,13 @@
 export default defineAppConfig({
   pages: [
     'pages/index/index',  // 小程序首页
-    'pages/dynamic/index',  // 动态首页
-    'pages/news/index',  // 新闻首页
-    'pages/user/index',  // 我的首页
-    'pages/reservation/index',  // 预约首页
     'pages/search/index',  // 搜索页面
-    
+    'pages/news/index',  // 新闻首页
+    'pages/login/index',  // 登录
+    'pages/login/login-guide/index',  // 我的首页
+    'pages/user/index',  // 我的首页
+    'pages/dynamic/index',  // 动态首页
+    // 'pages/reservation/index',  // 预约首页
   ],
   window: {
     backgroundTextStyle: 'light',

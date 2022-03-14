@@ -8,9 +8,9 @@
         "urlCheck": false,
         "es6": false,
         "enhance": true,
-        "postcss": false,
+        "postcss": true,
         "preloadBackgroundData": false,
-        "minified": false,
+        "minified": true,
         "newFeature": false,
         "coverView": true,
         "nodeModules": false,
@@ -44,5 +44,6 @@
     },
     "compileType": "miniprogram",
     "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+    "libVersion": "2.23.0",
     "condition": {}
 }
