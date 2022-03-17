@@ -66,7 +66,7 @@ const LoginGuide = () => {
         <Text className='agreement-right'>用户注册协议、隐私协议</Text>
       </View>
       <Button className='wechat-login' open-type='getPhoneNumber' onGetPhoneNumber={getPhoneNumber}>微信用户一键登录</Button>
-      <View className='phone-login' onClick={login_register}>输入手机号和密码注册/登录</View>
+      <View className='phone-login' onClick={login_register}>输入手机号和验证码注册/登录</View>
     </View>
   );
 };

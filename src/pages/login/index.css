@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+  height: 80%;
+  width: 100%;
 }
 .container .logo-name {
   display: flex;
@@ -109,7 +110,7 @@
   width: 25%;
   font-size: 36px;
   margin-bottom: 2%;
-  margin-top: -13.5%;
+  margin-top: -13.3%;
   margin-right: 11%;
   padding: 0;
   z-index: 999;
