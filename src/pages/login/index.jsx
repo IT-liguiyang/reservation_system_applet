@@ -119,19 +119,22 @@ const Login = ()=>{
   const login = async () => {
     if(inputUsername === '' ){  // 判断手机号是否为空
       Taro.showToast({
-        title: '请输入手机号！'
+        title: '请输入手机号！',
+        icon: 'fail'
       });
       return;
     }
     if(inputVerificationCode === '' ){  // 判断验证码是否为空
       Taro.showToast({
-        title: '请输入验证码！'
+        title: '请输入验证码！',
+        icon: 'fail'
       });
       return;
     }
     if( isChecked === false) {
       Taro.showToast({
-        title: '请同意相关协议'
+        title: '请同意相关协议',
+        icon: 'fail'
       });
       return;
     };
@@ -176,7 +179,8 @@ const Login = ()=>{
       });
     } else {
       Taro.showToast({
-        title: '验证码错误！'
+        title: '验证码错误！',
+        icon: 'fail'
       });
     }
     
