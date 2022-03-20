@@ -58,7 +58,9 @@ const Login = ()=>{
   const getVerificationCode = () => {
     if(inputUsername === '' ){
       Taro.showToast({
-        title: '请先输入手机号！'
+        title: '请先输入手机号！',
+        icon: 'error',
+        duration: 1000
       });
       return;
     }
@@ -120,21 +122,24 @@ const Login = ()=>{
     if(inputUsername === '' ){  // 判断手机号是否为空
       Taro.showToast({
         title: '请输入手机号！',
-        icon: 'fail'
+        icon: 'error',
+        duration: 1000
       });
       return;
     }
     if(inputVerificationCode === '' ){  // 判断验证码是否为空
       Taro.showToast({
         title: '请输入验证码！',
-        icon: 'fail'
+        icon: 'error',
+        duration: 1000
       });
       return;
     }
     if( isChecked === false) {
       Taro.showToast({
         title: '请同意相关协议',
-        icon: 'fail'
+        icon: 'error',
+        duration: 1000
       });
       return;
     };
@@ -180,7 +185,8 @@ const Login = ()=>{
     } else {
       Taro.showToast({
         title: '验证码错误！',
-        icon: 'fail'
+        icon: 'error',
+        duration: 1000
       });
     }
     
