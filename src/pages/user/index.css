@@ -75,7 +75,6 @@
   background-color: #fff;
 }
 .personal .personal-bottom .personal-bottom-item {
-  height: 110px;
   border-bottom: 2px solid #ece9e9;
   line-height: 100px;
   padding: 0 20px;
@@ -86,4 +85,10 @@
 .personal .personal-bottom .personal-bottom-item .iconfont {
   font-size: 30px;
   float: right;
+}
+.personal .personal-bottom .personal-bottom-item .complete-information {
+  border: 2px solid red;
+  color: orangered;
+  padding: 5px;
+  margin-left: 45%;
 }
