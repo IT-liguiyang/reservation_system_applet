@@ -5,6 +5,7 @@ import logo from '../../static/login/li-without-border.png';
 import { COUNT_DOWN } from '../../utils/constants';
 
 import './index.less';
+import { reqAddUser, reqUserCurrent } from './service';
 
 const Login = ()=>{
 
@@ -115,7 +116,7 @@ const Login = ()=>{
   };
 
   // 点击登录的回调
-  const login = () => {
+  const login = async () => {
     if(inputUsername === '' ){  // 判断手机号是否为空
       Taro.showToast({
         title: '请输入手机号！'
@@ -130,13 +131,47 @@ const Login = ()=>{
     }
     if( isChecked === false) {
       Taro.showToast({
-        title: '请先勾选用户注册协议、隐私协议'
+        title: '请同意相关协议'
       });
       return;
     };
     if(inputVerificationCode !== '' && inputVerificationCode === verificationCode ){
-      clearInterval(timer);  // 清除定时器
-      Taro.switchTab({  // 跳转到首页
+      // 清除验证码 倒计时 定时器
+      clearInterval(timer); 
+      
+      // 2. 提交添加的请求
+      const userObj = {
+        username: inputUsername,
+        head_portrait: [], // 用户头像
+        realname: '', // 姓名
+        ID_number: '', // 身份证号
+        address: '', // 住址
+        profession: '', // 职业 
+      };
+      const result = await reqAddUser(userObj);
+      
+      if(result.status === 1) { // 当前登录的用户已经存在
+        // 获取全部用户信息后再保存
+        const current_user_result = await reqUserCurrent(inputUsername);
+        if(current_user_result.status === 0) {
+          // 保存用户信息
+          try {
+            Taro.setStorageSync('userObj', current_user_result.data[0]);
+          } catch (e) { 
+            console.log(e);
+          }
+        }
+      } else if(result.status === 0) { // 当前登录的用户已经存在
+        // 直接保存用户信息（用户名存在，其他字段均为空）
+        try {
+          Taro.setStorageSync('userObj', result.data[0]);
+        } catch (e) { 
+          console.log(e);
+        }
+      }
+
+      // 跳转到首页
+      Taro.switchTab({  
         url:'../index/index'
       });
     } else {
