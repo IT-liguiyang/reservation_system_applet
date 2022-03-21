@@ -1,0 +1,49 @@
+.personal {
+  width: 100%;
+  height: 100%;
+  background-color: #d7ebf8;
+}
+.personal .personal-info {
+  margin: 4%;
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  font-size: 36px;
+  color: #666665;
+  background-color: #fff;
+}
+.personal .personal-info .personal-info-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid #ece9e9;
+  line-height: 100px;
+  padding: 0 20px;
+}
+.personal .personal-info .personal-info-item .title {
+  font-size: 35px;
+}
+.personal .personal-info .personal-info-item .input {
+  width: 450px;
+  padding: 10px 20px;
+  background-color: rgba(252, 240, 240, 0.904);
+}
+.personal .personal-info .personal-info-item .textarea-input {
+  width: 450px;
+  height: 150px;
+  margin: 15px 0px;
+  padding: 10px 20px;
+  line-height: 50px;
+  background-color: rgba(252, 240, 240, 0.904);
+}
+.personal .personal-info .submit-btn {
+  width: 100%;
+  margin-top: 20px;
+  background-color: #9bcee2;
+  border: 2px solid #9bcee2;
+}
+.personal .notice {
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
