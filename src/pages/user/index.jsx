@@ -8,37 +8,42 @@ import { BASE_IMG_URL } from '../../utils/constants';
 
 const User = () => {
 
-  const [ userId, SetUserId ] = useState();  // 头像
+  const userId = Taro.getStorageSync('userId');  // 从缓存获取不会改变的 userId
   const [ new_username, SetUsername ] = useState();  // 头像
   const [ new_head_portrait, SetHeadPortrait ] = useState([]);  // 头像
   const [ new_realname, SetRealname ] = useState('');  // 姓名
   const [ new_ID_number, SetID_number ] = useState('');  // 身份证
   const [ new_address, SetAddress ] = useState('');  // 地址
   const [ new_profession, SetProfession ] = useState('');  // 职业
+  const [ new_realname_authentication, SetRealnameAuthentication ] = useState('');  // 实名认证
 
   // 获取当前登录用户的信息
   const getUserInfo = async () => {
     // 从缓存得到当前登录的用户
     const userObj_from_storage = Taro.getStorageSync('userObj');
-    console.log('userObj_from_storage', userObj_from_storage);
-    const { _id, username, head_portrait, realname, ID_number, address, profession } = userObj_from_storage || {};
-    SetUserId(_id);
+    const { username, head_portrait, realname, ID_number, address, profession, realname_authentication } = userObj_from_storage || {};
+    console.log('777777', realname_authentication);
     SetUsername(username);
     SetHeadPortrait(head_portrait);
     SetRealname(realname);
     SetID_number(ID_number);
     SetAddress(address);
     SetProfession(profession);
+    SetRealnameAuthentication(realname_authentication);
 
     // 当所有信息都完善时，就不显示 “点击完善信息” 按钮
-    if (_id&&username&&realname&&ID_number&&address&&profession){
+    if (userId&&username&&realname&&ID_number&&address&&profession){
       document.getElementById('complete-information').style.display = 'none';
+    }
+    // 当完成实名认证时，就不显示 “未完成” 按钮
+    if (new_realname_authentication === '已完成'){
+      document.getElementById('realname-authentication').style.display = 'none';
     }
   };
 
   useEffect(() => {
     getUserInfo();
-  }, []);
+  }, [new_realname_authentication]);
 
   // 更换头像
   const addhead_portrait = async () => {
@@ -64,12 +69,21 @@ const User = () => {
                 realname: new_realname, 
                 ID_number: new_ID_number, 
                 address: new_address, 
-                profession: new_profession
+                profession: new_profession,
+                realname_authentication: new_realname_authentication
               };
 
               // 3.发送请求 更新数据库中的头像信息
               const result = await reqUpdateUser({userObj, userId});
               console.log(result);
+
+              // 4.更新本地缓存
+              try {
+                Taro.removeStorageSync('userObj');
+                Taro.setStorageSync('userObj', {userId, ...userObj});
+              } catch (e) {
+                console.log(e);
+              }
             }
             
           }
@@ -78,10 +92,46 @@ const User = () => {
     });
   };
 
+  // 查看并完善和修改个人信息
+  const personalInfo = () => {
+    Taro.navigateTo({
+      url:'./personal-info/index'
+    });
+  };
+
+  // 查看并完善和修改个人信息
+  const Certification = () => {
+    Taro.navigateTo({
+      url:'./realname-authentication/index'
+    });
+  };
+
+  // 查看并完善和修改个人信息
+  const myDynamic = () => {
+    console.log(333);
+  };
+
+  // 查看并完善和修改个人信息
+  const commontProblem = () => {
+    console.log(commontProblem);
+  };
+
+  // 查看并完善和修改个人信息
+  const feedback = () => {
+    console.log(feedback);
+  };
+
+  // 查看并完善和修改个人信息
+  const aboutUs = () => {
+    console.log(aboutUs);
+  };
+
+  // 退出登录
   const logout = () => {
     // 退出时清空缓存
     try {
-      Taro.removeStorageSync('username');
+      Taro.removeStorageSync('userId');
+      Taro.removeStorageSync('userObj');
     } catch (e) {
       console.log(e);
     }
@@ -111,28 +161,29 @@ const User = () => {
         </Text>
       </View>
       <View className='personal-bottom'>
-        <Text className='personal-bottom-item'>
+        <Text className='personal-bottom-item' onClick={personalInfo}>
           <Text className='title'>个人信息</Text>
           <Text className='complete-information' id='complete-information'>点击去完善</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>
-        <Text className='personal-bottom-item'>
+        <Text className='personal-bottom-item' onClick={Certification}>
           <Text className='title'>实名认证</Text>
+          <Text className='realname-authentication' id='realname-authentication'>未完成</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>
-        <Text className='personal-bottom-item'>
+        <Text className='personal-bottom-item' onClick={myDynamic}>
           <Text className='title'>我的动态</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>
-        <Text className='personal-bottom-item'>
+        <Text className='personal-bottom-item' onClick={commontProblem}>
           <Text className='title'>常见问题</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>
-        <Text className='personal-bottom-item'>
+        <Text className='personal-bottom-item' onClick={feedback}>
           <Text className='title'>意见反馈</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>
-        <Text className='personal-bottom-item'>
+        <Text className='personal-bottom-item' onClick={aboutUs}>
           <Text className='title'>关于我们</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>

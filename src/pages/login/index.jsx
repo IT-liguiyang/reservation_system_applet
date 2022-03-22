@@ -17,6 +17,17 @@ const Login = ()=>{
   const [ isDisable, setIsDisable ] = useState(false);  // 设置获取验证码按钮是否禁用
   const [ timer, setTimer ] = useState(0);  // 设置验证码定时器的 id
   
+  const userObj_from_storage = Taro.getStorageSync('userObj');
+  const userId_from_storage = Taro.getStorageSync('userId');
+
+  // 如果缓存中有用户信息，则直接进入主页
+  if(userId_from_storage&&userObj_from_storage) {
+    // 跳转到首页
+    Taro.switchTab({  
+      url:'../index/index'
+    });
+  }
+  
   // 点击是否同意注册、隐私协议
   const changeChecked = () => {
     console.log(1111);
@@ -25,10 +36,10 @@ const Login = ()=>{
 
   // 获取用户输入的账号：手机号
   const getUsername = (e) => {
+    // 判断手机号的正则表达式
     const reg = new RegExp('(13[0-9]|14[5-9]|15[0-3,5-9]|16[2,5,6,7]|17[0-8]|18[0-9]|19[0-3,5-9])\\d{8}', 'g');
     const reg_result = reg.exec(e.detail.value);
-    console.log(e.detail.value);
-    console.log(reg_result);
+   
     if (reg_result) {  // 正确匹配
       setInputUsername(e.detail.value);  
     } else {
@@ -39,20 +50,6 @@ const Login = ()=>{
       });
     }
   };
-
-  // const getPassword = (e) => {
-  //   const reg = new RegExp('[a-zA-Z][a-zA-Z0-9_]{8,12}', 'g');
-  //   const reg_result = reg.exec(e.detail.value);
-  //   if (reg_result) {
-  //     setInputPassword(e.detail.value);
-  //   } else {
-  //     Taro.showToast({
-  //       title: '密码格式错误',
-  //       icon: 'error',
-  //       duration: 1000
-  //     });
-  //   }
-  // };
 
   // 点击获取验证码，并调用云函数发送含验证码的信息到用户手机上
   const getVerificationCode = () => {
@@ -155,6 +152,7 @@ const Login = ()=>{
         ID_number: '', // 身份证号
         address: '', // 住址
         profession: '', // 职业 
+        realname_authentication: '未完成', // 是否已完成实名认证
       };
       const result = await reqAddUser(userObj);
       
@@ -164,15 +162,20 @@ const Login = ()=>{
         if(current_user_result.status === 0) {
           // 保存用户信息
           try {
+            const { _id } = current_user_result.data[0];
             Taro.setStorageSync('userObj', current_user_result.data[0]);
+            Taro.setStorageSync('userId', _id);
+
           } catch (e) { 
             console.log(e);
           }
         }
-      } else if(result.status === 0) { // 当前登录的用户已经存在
+      } else if(result.status === 0) { // 当前登录的用户不存在
         // 直接保存用户信息（用户名存在，其他字段均为空）
         try {
-          Taro.setStorageSync('userObj', result.data[0]);
+          const { _id } = result.data;
+          Taro.setStorageSync('userObj',result.data);
+          Taro.setStorageSync('userId', _id);
         } catch (e) { 
           console.log(e);
         }
@@ -214,12 +217,6 @@ const Login = ()=>{
         <View className='username-text'>用户名：</View>
         <Input className='username-input' onBlur={getUsername} placeholder='请输入手机号'></Input>
       </View>
-      
-      {/* <View className='password'>
-        <View className='password-text'>密&nbsp;&nbsp;&nbsp;码：</View>
-        <Input type='password' className='password-input' onBlur={getPassword}  placeholder='同意并输入密码'></Input>
-      </View> */}
-
       <View className='verification'>
         <View className='verification-text'>验证码：</View>
         <Input className='verification-input' onBlur={getInputCode} placeholder='手机验证码'>

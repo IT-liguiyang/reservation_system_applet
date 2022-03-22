@@ -12,7 +12,7 @@ const PersonalInfo = () => {
   const userId = Taro.getStorageSync('userId');  
   // 从缓存获取 userObj
   const userObj_from_storage = Taro.getStorageSync('userObj');
-  const { username, head_portrait, realname, ID_number, address, profession } = userObj_from_storage || {};
+  const { username, head_portrait, realname, ID_number, address, profession, realname_authentication } = userObj_from_storage || {};
 
   const formSubmit = async (event) => {
     // 1.得到输入的地址和职业
@@ -25,7 +25,8 @@ const PersonalInfo = () => {
       realname, 
       ID_number, 
       address: input_address, 
-      profession: input_profession
+      profession: input_profession,
+      realname_authentication
     };
 
     // 3.发送请求 更新数据库中的头像信息
@@ -49,11 +50,11 @@ const PersonalInfo = () => {
         </View>
         <View className='personal-info-item'>
           <Text className='title'>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</Text>
-          <Input name='input_realname' value={realname} className='input' disabled></Input>
+          <Input name='input_realname' value={realname} className='input'></Input>
         </View>
         <View className='personal-info-item'>
           <Text className='title'>身份证号：</Text>
-          <Input name='input_ID_number' value={ID_number} className='input' disabled></Input>
+          <Input name='input_ID_number' value={ID_number} className='input'></Input>
         </View>
         <View className='personal-info-item'>
           <Text className='title'>住&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：</Text>
@@ -62,6 +63,10 @@ const PersonalInfo = () => {
         <View className='personal-info-item'>
           <Text className='title'>职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：</Text>
           <Input name='input_profession' value={profession} className='input'></Input>
+        </View>
+        <View className='personal-info-item'>
+          <Text className='title'>实名认证：</Text>
+          <Input name='input_realname_authentication' value={realname_authentication} className='input' disabled></Input>
         </View>
         <Button className='submit-btn' form-type='submit'>提&nbsp;&nbsp;交</Button>
       </Form>
