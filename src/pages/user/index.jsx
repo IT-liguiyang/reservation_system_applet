@@ -43,6 +43,7 @@ const User = () => {
 
   useEffect(() => {
     getUserInfo();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [new_realname_authentication]);
 
   // 更换头像
