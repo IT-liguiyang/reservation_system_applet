@@ -41,6 +41,7 @@
     "@tarojs/react": "3.4.2",
     "@tarojs/runtime": "3.4.2",
     "@tarojs/taro": "3.4.2",
+    "moment": "^2.29.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0"
   },
