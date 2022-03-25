@@ -1,0 +1,53 @@
+.publish {
+  height: 100%;
+  width: 100%;
+}
+.publish .textarea-container {
+  margin: 5% 5%;
+  padding: 10px;
+  height: 200px;
+  font-size: 35px;
+}
+.publish .textarea-container .textarea {
+  height: 100%;
+  width: 100%;
+}
+.publish .imageupload-container {
+  margin: 5% 5%;
+}
+.publish .imageupload-container .image-list {
+  width: 98%;
+  margin: 1% 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.publish .imageupload-container .image-list .image {
+  width: 210px;
+  height: 210px;
+  margin: 0;
+  background-color: #dae7a9;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.publish .imageupload-container .image-list .image .shanchu {
+  position: absolute;
+  opacity: 0.6;
+  top: 0;
+  right: 0;
+}
+.publish .imageupload-container .image-list .iconfont {
+  width: 210px;
+  height: 210px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #e8ebe8;
+  font-size: 80px;
+  color: #777673;
+}
+.publish .publish_button {
+  margin: 5%;
+}

@@ -1,0 +1,64 @@
+.publish {
+    height: 100%;
+    width: 100%;
+
+    .textarea-container {
+        margin: 5% 5%;
+        padding: 10px;
+        height: 200px;
+        font-size: 35px;
+
+        .textarea {
+            height: 100%;
+            width: 100%;
+        }
+    }
+
+    .imageupload-container {
+        margin: 5% 5%;
+
+        // 图片列表区域
+        .image-list {
+            width: 98%;
+            margin: 1% 1%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+           .image {
+               width: 210px;
+               height: 210px;
+               margin: 0;
+               background-color: rgb(218, 231, 169);
+               margin-right: 10px;
+               margin-bottom: 10px;
+               position: relative;
+            
+               .shanchu {
+                   position: absolute;
+                   opacity: 0.6;
+                   top: 0;
+                   right: 0;
+               }
+            
+            } 
+
+            .iconfont {
+                width: 210px;
+                height: 210px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                background-color: rgb(232, 235, 232);
+                font-size: 80px;
+                color: rgb(119, 118, 115);
+            }
+        }
+
+    }
+
+    .publish_button {
+        margin: 5%;
+    }
+}
