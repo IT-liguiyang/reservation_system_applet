@@ -63,7 +63,16 @@ const DynamicPublish = () => {
         duration: 1500
       });
       setTimeout(() => {
-        Taro.navigateBack();
+        // 使跳转后自动重新获取数据
+        Taro.switchTab({
+          url: '../index',
+          success:  () => { 
+            // 认证成功，跳转至动态首页后需要刷新页面，否则无法拿到最新发布的动态
+            const page = Taro.getCurrentPages().pop();
+            page.onLoad(); 
+          } 
+        });
+        
       }, 1500);
     }
   };
