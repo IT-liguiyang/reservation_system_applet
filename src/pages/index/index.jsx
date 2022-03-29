@@ -35,11 +35,7 @@ const Index = () => {
   }, []);
 
   // 构造轮播图图片
-  const imageList = [
-    {key: 0, path: swiper1},
-    {key: 1, path: swiper2},
-    {key: 2, path: swiper3},
-  ];
+  const imageList = [ swiper1, swiper2, swiper3 ];
 
   const handleOnclickReservationEntry = () => {
     Taro.navigateTo({
@@ -66,6 +62,15 @@ const Index = () => {
   Taro.onReachBottom = () => {};//上拉事件监听
 
   console.log('666', schoolList);
+
+  const jumpToSchoolIndex = (item) => {
+    Taro.navigateTo({
+      url: '../school/index',
+      success: function(res){
+        res.eventChannel.emit('acceptData', { data: item });
+      }
+    });
+  };
 
   return(
     <View className='index'>
@@ -98,7 +103,7 @@ const Index = () => {
           {
             schoolList.map((item) => {
               return (
-                <View className='scrollItem' key={item._id}>
+                <View className='scrollItem' key={item._id} onClick={()=> jumpToSchoolIndex(item)}>
                   <Image className='scrollItem-image' src={config.basicImgUrl+item.image[0]}></Image>
                   <Text className='scrollItem-text'>{item.school[1]}</Text>
                 </View>

@@ -1,0 +1,232 @@
+.school {
+    width: 100%;
+    height: 100%;
+
+    .icon-zuojiantou {
+        position: absolute;
+        font-size: 60px;
+        // font-weight: bold;
+        color: white;
+        top: 5%;
+        left: 2%;
+        z-index: 999;
+    }
+
+    .swiper {
+        width: 100%;
+        height: 30%;
+        background-color: pink;
+
+        .index-swiper {
+            width: 100%;
+            height: 100%;
+
+            .index-swiper-item {
+                width: 100%;
+                height: 100%;
+
+                .index-swiper-view {
+                    width: 100%;
+                    height: 100%;
+
+                    .index-swiper-image {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    
+    .content {
+        width: 100%;
+        margin-bottom: 100px;
+        background-color: rgb(243, 239, 239);
+    
+        .school-basic-info {
+            background-color: white;
+            height: auto;
+
+            .top {
+                padding: 3%;
+                border-bottom: 2px solid #e0dddd;
+            
+                .school-name {
+                    font-family: SimHei;
+                    font-size: 50px;
+                }
+
+                .open-time {
+                    display: flex;
+                    margin-top: 10px;
+                    margin-left: 10px;
+
+                    .iconfont {
+                        margin-top: 1%;
+                        margin-right: 5px;
+                        font-size: 26px;
+                        color: rgb(211, 206, 199);
+                    }
+
+                    .text {
+                        font-size: 30px;
+                    }
+                }
+            }
+
+            .bottom {
+                display: flex;
+                align-items: center;
+                padding: 2% 3%;
+
+                .bottom-left {
+                    width: 75%;
+
+                    .school-telephone {
+                        font-size: 30px;
+                    }
+    
+                    .school-address {
+                        font-size: 30px;
+                        overflow-wrap: break-word;  // 换行
+                    }
+                }
+
+                .bottom-right {
+                    width: 25%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .address {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        border-right: 1px solid #e0dddd;
+                        margin: 15px;
+                        padding-right: 30px;
+    
+                        .iconfont {
+                            font-size: 40px;
+                            color: #69aeee;
+                        }
+
+                        .address-text {
+                            font-size: 23px;
+                        }
+                    }
+
+                    .phone {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-direction: column;
+                        padding: 15px;
+    
+                        .iconfont {
+                            font-size: 40px;
+                            color: #e7993f;
+                        }
+
+                        .phone-text {
+                            font-size: 23px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tabs {
+            background-color: white;
+
+            .introduce{
+                padding: 3%;
+
+                .tabs-item {
+                    margin-bottom: 20px;
+
+                    .tabs-item-title {
+                        font-size: 32px;
+                        margin-bottom: 10px;
+                        font-weight: bolder;
+                    }
+
+                    .tabs-item-content {
+                        font-size: 32px;
+                        color: rgb(90, 89, 89);
+                    }
+                }
+            }
+
+            .reservation_notice {
+                padding: 2%;
+                font-size: 32px;
+                color: rgb(90, 89, 89);
+            }
+
+            .announcement {
+                padding: 2%;
+                font-size: 32px;
+                color: rgb(90, 89, 89);
+
+                .announcement-container {
+                    padding: 20px 0;
+                    border-bottom: rgb(245, 242, 242) solid 5px;
+                
+                    .announcement-bottom {
+                        font-size: 30px;
+                    }
+                }
+
+                .noDate {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: #727171;
+
+                    .iconfont {
+                        font-size: 80px;
+                    }
+
+                    .noDate-text {
+                        font-size: 33px;
+                    }
+                }
+
+                
+            }
+
+            .at-tabs__item {
+                font-size: 32px;
+            }
+
+            .at-tabs__item--active {
+                font-size: 35px;
+                font-weight: bold;
+            }
+
+        }
+    }
+
+    .reservation-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100px;
+        border: 1px solid #e0dddd;
+        position: fixed;
+        bottom: 0;
+        background-color: rgb(236, 234, 234);
+
+        .button {
+            width: 60%;
+            height: 80px;
+            font-size: 35px;
+            border-radius: 45px;
+            background-color: rgb(0, 153, 255);
+        }
+    }
+}

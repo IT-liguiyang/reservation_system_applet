@@ -1,0 +1,188 @@
+.school {
+  width: 100%;
+  height: 100%;
+}
+.school .icon-zuojiantou {
+  position: absolute;
+  font-size: 60px;
+  color: white;
+  top: 5%;
+  left: 2%;
+  z-index: 999;
+}
+.school .swiper {
+  width: 100%;
+  height: 30%;
+  background-color: pink;
+}
+.school .swiper .index-swiper {
+  width: 100%;
+  height: 100%;
+}
+.school .swiper .index-swiper .index-swiper-item {
+  width: 100%;
+  height: 100%;
+}
+.school .swiper .index-swiper .index-swiper-item .index-swiper-view {
+  width: 100%;
+  height: 100%;
+}
+.school .swiper .index-swiper .index-swiper-item .index-swiper-view .index-swiper-image {
+  width: 100%;
+  height: 100%;
+}
+.school .content {
+  width: 100%;
+  margin-bottom: 100px;
+  background-color: #f3efef;
+}
+.school .content .school-basic-info {
+  background-color: white;
+  height: auto;
+}
+.school .content .school-basic-info .top {
+  padding: 3%;
+  border-bottom: 2px solid #e0dddd;
+}
+.school .content .school-basic-info .top .school-name {
+  font-family: SimHei;
+  font-size: 50px;
+}
+.school .content .school-basic-info .top .open-time {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.school .content .school-basic-info .top .open-time .iconfont {
+  margin-top: 1%;
+  margin-right: 5px;
+  font-size: 26px;
+  color: #d3cec7;
+}
+.school .content .school-basic-info .top .open-time .text {
+  font-size: 30px;
+}
+.school .content .school-basic-info .bottom {
+  display: flex;
+  align-items: center;
+  padding: 2% 3%;
+}
+.school .content .school-basic-info .bottom .bottom-left {
+  width: 75%;
+}
+.school .content .school-basic-info .bottom .bottom-left .school-telephone {
+  font-size: 30px;
+}
+.school .content .school-basic-info .bottom .bottom-left .school-address {
+  font-size: 30px;
+  overflow-wrap: break-word;
+}
+.school .content .school-basic-info .bottom .bottom-right {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.school .content .school-basic-info .bottom .bottom-right .address {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-right: 1px solid #e0dddd;
+  margin: 15px;
+  padding-right: 30px;
+}
+.school .content .school-basic-info .bottom .bottom-right .address .iconfont {
+  font-size: 40px;
+  color: #69aeee;
+}
+.school .content .school-basic-info .bottom .bottom-right .address .address-text {
+  font-size: 23px;
+}
+.school .content .school-basic-info .bottom .bottom-right .phone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+}
+.school .content .school-basic-info .bottom .bottom-right .phone .iconfont {
+  font-size: 40px;
+  color: #e7993f;
+}
+.school .content .school-basic-info .bottom .bottom-right .phone .phone-text {
+  font-size: 23px;
+}
+.school .content .tabs {
+  background-color: white;
+}
+.school .content .tabs .introduce {
+  padding: 3%;
+}
+.school .content .tabs .introduce .tabs-item {
+  margin-bottom: 20px;
+}
+.school .content .tabs .introduce .tabs-item .tabs-item-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+.school .content .tabs .introduce .tabs-item .tabs-item-content {
+  font-size: 32px;
+  color: #5a5959;
+}
+.school .content .tabs .reservation_notice {
+  padding: 2%;
+  font-size: 32px;
+  color: #5a5959;
+}
+.school .content .tabs .announcement {
+  padding: 2%;
+  font-size: 32px;
+  color: #5a5959;
+}
+.school .content .tabs .announcement .announcement-container {
+  padding: 20px 0;
+  border-bottom: #f5f2f2 solid 5px;
+}
+.school .content .tabs .announcement .announcement-container .announcement-bottom {
+  font-size: 30px;
+}
+.school .content .tabs .announcement .noDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #727171;
+}
+.school .content .tabs .announcement .noDate .iconfont {
+  font-size: 80px;
+}
+.school .content .tabs .announcement .noDate .noDate-text {
+  font-size: 33px;
+}
+.school .content .tabs .at-tabs__item {
+  font-size: 32px;
+}
+.school .content .tabs .at-tabs__item--active {
+  font-size: 35px;
+  font-weight: bold;
+}
+.school .reservation-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  border: 1px solid #e0dddd;
+  position: fixed;
+  bottom: 0;
+  background-color: #eceaea;
+}
+.school .reservation-btn .button {
+  width: 60%;
+  height: 80px;
+  font-size: 35px;
+  border-radius: 45px;
+  background-color: #0099ff;
+}

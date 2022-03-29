@@ -22,11 +22,11 @@ const MySwiper = (props) => {
         duration='500'
       >
         {
-          props.imageList.map((item) => {
+          props.imageList.map((item,index) => {
             return (
-              <SwiperItem key={item.key}>
-                <View key={item.key} className='index-swiper-view'>
-                  <Image key={item.key} className='index-swiper-image' src={item.path}></Image>
+              <SwiperItem key={index}>
+                <View className='index-swiper-view'>
+                  <Image className='index-swiper-image' src={item}></Image>
                 </View>
               </SwiperItem>
             );
