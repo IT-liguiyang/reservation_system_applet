@@ -1,0 +1,96 @@
+.index {
+  width: 100%;
+  height: 100%;
+}
+.index .head-image {
+  width: 100%;
+  height: 250px;
+}
+.index .head-image .img {
+  width: 100%;
+  height: 100%;
+}
+.index .search {
+  width: 100%;
+  height: 100px;
+  padding: 1% 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.index .search .search-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  background-color: #f3f0f0;
+  padding-left: 15px;
+  border-radius: 37px;
+}
+.index .search .search-container .picker-container {
+  font-size: 70px;
+  width: 80px;
+}
+.index .search .search-container .picker-container .picker-item {
+  font-size: 35px;
+  padding-left: 10px;
+}
+.index .search .search-container .iconfont {
+  font-size: 40px;
+  font-weight: bolder;
+}
+.index .search .search-container .show {
+  display: none;
+}
+.index .search .search-container .input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 75%;
+  height: 74px;
+  background-color: #f3f0f0;
+  border-radius: 37px;
+}
+.index .search .search-container .input-container .icon-search {
+  position: absolute;
+  font-size: 35px;
+  left: 15px;
+}
+.index .search .search-container .input-container .search-input {
+  margin-left: 60px;
+}
+.index .search .search-container .input-container .placeholder {
+  font-size: 33px;
+  color: #807f7d;
+}
+.index .search .cancel-button {
+  height: 60px;
+  width: 15%;
+  margin-left: 1%;
+  margin-top: 1%;
+  font-size: 35px;
+}
+.index .district-choice {
+  padding: 0 2%;
+}
+.index .district-choice .choice-label-all {
+  font-size: 30px;
+  padding: 0px 24px;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+.index .district-choice .choice-label {
+  font-size: 30px;
+  padding: 0px 10px;
+  border-radius: 10px;
+  margin-right: 12px;
+}
+.index .district-choice .active {
+  background-color: #8cd48c;
+}
+.index .school-list {
+  width: 96%;
+  margin-left: 2%;
+}
+.index .school-list .container {
+  width: 100%;
+}

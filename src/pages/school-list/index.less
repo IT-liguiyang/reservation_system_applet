@@ -1,0 +1,120 @@
+.index {
+    width: 100%;
+    height: 100%;
+
+    .head-image {
+        width: 100%;
+        height: 250px;
+
+        .img {
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    .search {
+        width: 100%;
+        height: 100px;
+        padding: 1% 2%;
+        // border-bottom: rgb(236, 234, 234) solid 1px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            background-color: rgb(243, 240, 240);
+            padding-left: 15px;
+            border-radius: 37px;;
+
+            .picker-container{
+                font-size: 70px;
+                width: 80px;
+
+                .picker-item{
+                    font-size: 35px;
+                    padding-left: 10px;
+                }
+            }
+
+            .iconfont {
+                font-size: 40px;
+                font-weight: bolder;
+            }
+
+            .show {
+                display: none;
+            }
+
+            .input-container {
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: 75%;
+                height: 74px;
+                background-color: rgb(243, 240, 240);
+                border-radius: 37px;
+        
+                .icon-search {
+                    position: absolute;
+                    font-size: 35px;
+                    left: 15px;
+                }
+        
+                .search-input {
+                    margin-left: 60px;
+                }
+        
+                .placeholder {
+                    font-size: 33px;
+                    color: rgb(128, 127, 125);
+                }
+        
+        
+            }
+        }
+
+        .cancel-button{
+            height: 60px;
+            width: 15%;
+            margin-left: 1%;
+            margin-top: 1%;
+            font-size: 35px;
+        }
+    }
+
+    .district-choice {
+        padding: 0 2%;
+
+        .choice-label-all {
+            font-size: 30px;
+            padding: 0px 24px;
+            border-radius: 10px;
+            margin-right: 12px;
+        }
+
+        .choice-label {
+            font-size: 30px;
+            padding: 0px 10px;
+            border-radius: 10px;
+            margin-right: 12px;
+        }
+
+        .active {
+            background-color: rgb(140, 212, 140);
+        }
+    }
+
+    .school-list {
+        width: 96%;
+        margin-left: 2%;
+
+        // 解决和SchoolItem中的样式冲突
+        .container {
+            width: 100%;
+        }
+    }
+}
