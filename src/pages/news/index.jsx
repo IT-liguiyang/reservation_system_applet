@@ -1,61 +1,43 @@
-import { useState, useEffect } from 'react';
-import { Input, View, Text, Image } from '@tarojs/components';
-
-import reqNews from './service';
+import { useEffect, useState } from 'react';
+import Taro from '@tarojs/taro';
+import { View, Text } from '@tarojs/components';
 
 import './index.less';
-import newImg from '../../static/news/notfound-img.png';
-import { BASE_IMG_URL } from '../../utils/constants';
 
 const News = () => {
 
-  const [ newsList, setNewsList ] = useState([]);
+  const [ newsObj, setNewsObj ] = useState({});
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect( async () => {
-    // 发送请求
-    const result = await reqNews(1, 6);
-    console.log('1111', result.data.list);
+  useEffect(() => {
 
-    setNewsList(result.data.list);
+    // 得到点击页面传过来的一个学校对象 item
+    const pages = Taro.getCurrentPages();
+    const current = pages[pages.length - 1];
+    const eventChannel = current.getOpenerEventChannel();
+    eventChannel.on('acceptData', (data) => {
+      console.log('接收到的新闻对象', data.data);
+      setNewsObj(data.data);
+    });
   }, []);
 
-  // 得到图片的路径
-  const getImgSrc = (item) => {
-    const srcReg = /\bsrc\b\s*=\s*[\'\"]?([^\'\"]*)[\'\"]?/i; // 匹配src的值
-    const src = item.pub_content[0].match(srcReg); 
-    const realSrc =  src ? src[1].split('upload/') : ''; // 通过截取得到 image-1647047100634.jpg
-    return realSrc[1];
-  };
+  console.log(newsObj);
 
-  console.log(newsList);
+  const { 
+    publisher, 
+    real_pub_time,
+    origin,
+    pub_theme, 
+    pub_content, 
+  } = newsObj || {};
 
   return(
-    <View className='news-container'>
-      <View className='news-header'>
-        <Text className='iconfont icon-sousuo icon-search'></Text>
-        <Input className='search-input' placeholder='搜索您感兴趣的新闻' placeholderClass='placeholder'></Input>   
-      </View>
-      <View className='news-list'>
-        {
-          newsList.map((item) => {
-            return (
-              <View key={item._id} className='news-item'>
-                <View className='news-item-left'>
-                  <View className='news-theme'>{item.pub_theme.length > 23 ? item.pub_theme.slice(0,23)+'...':item.pub_theme}</View>
-                  <View className='news-bottom'>
-                    <View className='news-bottom-left'>{item.publisher.length>6?item.publisher.slice(0,6)+'...':item.publisher}  {item.pub_time.slice(5,11)}</View>
-                    <View className='news-bottom-right'>
-                      <Text className='iconfont icon-weixin'></Text>
-                      <Text className='news-bottom-right friends'>好友</Text>
-                    </View>
-                  </View>
-                </View>
-                <Image className='news-item-image' src={getImgSrc(item) ? (BASE_IMG_URL + getImgSrc(item)) : newImg}></Image>
-              </View>
-            );
-          })
-        }
+    <View className='news'>
+      <Text className='news-title'>{pub_theme ? pub_theme:''}</Text>
+      <View className='news-content' dangerouslySetInnerHTML={{__html: pub_content?pub_content[0]:''}}></View>
+      <View className='news-bottom'>
+        <View>发布人：{publisher? publisher:''}</View>
+        <View>发布时间：{real_pub_time ? real_pub_time : ''}</View>
+        <View>来源：{origin ? origin : ''}</View>
       </View>
     </View>
   );

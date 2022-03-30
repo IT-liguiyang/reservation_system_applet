@@ -1,97 +1,24 @@
-.news-container {
-    width: 100%;
-    height: 100%;
+.news {
+    padding: 2%;
 
-    .news-header {
+    .news-title {
         display: flex;
         align-items: center;
-        position: relative;
-        width: 96%;
-        height: 74px;
-        margin-left: 2%;
-        background-color: rgb(243, 240, 240);
-        border-radius: 37px;
-
-        .icon-search {
-            position: absolute;
-            font-size: 38px;
-            left: 15px;
-        }
-
-        .search-input {
-            margin-left: 60px;
-        }
-
-        .placeholder {
-            font-size: 33px;
-            color: rgb(128, 127, 125);
-        }
-
-
+        justify-content: center;
+        font-size: 40px;
+        font-weight: bold;
+        padding-bottom: 20px;
     }
 
-    .news-list {
-        width: 96%;
-        margin-left: 2%;
-        margin-top: 20px;
-        // background-color: rgb(207, 206, 206);
+    .news-content {
 
-        .news-item {
-            display: flex;
-            width: 96%;
-            height: 150px;
-            padding: 15px;
-            margin-top: 10px;
-            border-bottom: 1px solid rgb(187, 184, 184);
-
-            .news-item-left {
-                width: 65%;
-                height: 150px;
-    
-                .news-theme {
-                     font-size: 37px;
-                }
-
-                .news-bottom {
-                    display: flex;
-                    height: 35px;
-                    margin-top: 10px;
-                    position: relative;
-
-                    .news-bottom-left {
-                        font-size: 30px;
-                    }
-
-                    .news-bottom-right {
-                        display: flex;
-                        align-items: center;
-                        position: absolute;
-                        float: right;
-                        right: 10px;
-                        
-                        .iconfont {
-                            margin-right: 75px;
-                            margin-top: 2px;
-                            font-size: 35px;
-                        }
-    
-                        .friends {
-                            width: 65px;
-                            font-size: 29px;
-                            margin-left: 0;
-                        }
-
-                    }
-
-                }
-                
-            }
-
-            .news-item-image {
-                width: 35%;
-                height: 150px;
-                border-radius: 10px;
-            }
+        .h5-img {
+            height: 500px !important;
+            width: 100% !important;
         }
+    }
+
+    .news-bottom {
+        font-size: 32px;
     }
 }
