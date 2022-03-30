@@ -39,7 +39,7 @@ const Index = () => {
 
   const handleOnclickReservationEntry = () => {
     Taro.navigateTo({
-      url:'../reservation/index'
+      url:'../school-list/index'
     });
   };
 
@@ -52,7 +52,7 @@ const Index = () => {
   // 点击查看更多学校
   const showMoreSchool = () => {
     Taro.navigateTo({
-      url:'../search/index'
+      url:'../school-list/index'
     });
   };
 
@@ -116,7 +116,7 @@ const Index = () => {
       {/* 所有学校 */}
       <View className='school-list'>
         <Text className='title'>学校列表</Text>
-        <Text className='more' onClick={showMoreSchool}>查看更多</Text>
+        <Text className='more' onClick={showMoreSchool}>更多</Text>
         {/* 学校列表 */}
         <SchoolItem schoolList={schoolList} />
       </View>
