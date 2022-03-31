@@ -16,6 +16,7 @@ const Dynamic = () => {
 
   useEffect(() => {
     getDynamicData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // 发布请求，获取动态分享数据
