@@ -1,0 +1,13 @@
+.common-problems {
+  background-color: #f8f6f6;
+  margin: 2%;
+  border-radius: 10px;
+}
+.common-problems .at-accordion__info {
+  font-size: 38px;
+}
+.common-problems .content {
+  margin: 3%;
+  font-size: 32px;
+  color: #474747;
+}

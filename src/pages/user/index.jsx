@@ -115,8 +115,10 @@ const User = () => {
   };
 
   // 查看并完善和修改个人信息
-  const commontProblem = () => {
-    console.log(commontProblem);
+  const commonProblems = () => {
+    Taro.navigateTo({
+      url:'./common-problems/index'
+    });
   };
 
   // 查看并完善和修改个人信息
@@ -178,7 +180,7 @@ const User = () => {
           <Text className='title'>我的动态</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>
-        <Text className='personal-bottom-item' onClick={commontProblem}>
+        <Text className='personal-bottom-item' onClick={commonProblems}>
           <Text className='title'>常见问题</Text>
           <Text className='iconfont icon-youjiantou'></Text>
         </Text>
