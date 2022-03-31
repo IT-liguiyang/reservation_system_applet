@@ -107,9 +107,11 @@ const User = () => {
     });
   };
 
-  // 查看并完善和修改个人信息
+  // 查看我的动态
   const myDynamic = () => {
-    console.log(333);
+    Taro.navigateTo({
+      url:'./my-dynamic/index'
+    });
   };
 
   // 查看并完善和修改个人信息

@@ -1,0 +1,186 @@
+.dynamic {
+    width: 100%;
+    height: 100%;
+
+    .icon-zuojiantou {
+        position: absolute;
+        font-size: 60px;
+        // font-weight: bold;
+        color: white;
+        top: 5%;
+        left: 2%;
+        z-index: 999;
+    }
+
+    .dynamic-head {
+        width: 100%;
+        position: relative;
+
+        .dynamic-head-image {
+            width: 100%;
+            height: 450px;
+        }
+
+        .my-info {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            height: 150px;
+            bottom: 50px;
+            left: 20px;
+            z-index: 99;
+
+            .my-info-image {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                background-color: white;
+            }
+
+            .name {
+                margin: 30px 10px;
+                color: white;
+                .realname {
+                    font-size: 40px;
+                }
+    
+                .username {
+                    font-size: 36px;
+                }
+            }
+        }
+    }
+
+    .dynamic-container {
+        margin-top: 20px;
+
+        .dynamic-item {
+            width: 96%;
+            margin: 2%;
+            display: flex;
+            padding-bottom: 10px;
+            margin-bottom: 40px;
+            border-bottom: 1px solid #f0f0f0;
+    
+            // 左侧
+            .dynamic-item-left {
+                width: 15%;
+                margin-right: 10px;
+    
+                .avater {
+                    width: 112px;
+                    height: 112px;
+                    border-radius: 10px;
+                    background-color: rgb(218, 231, 169);
+                }
+            }
+    
+            // 右侧
+            .dynamic-item-right {
+                display: flex;
+                flex-direction: column;
+                width: 85%;
+    
+                // 发布人姓名
+                .realname {
+                    width: 98%;
+                    margin: 1% 1%;
+                    font-size: 35px;
+                    line-height: 50px;
+                    font-weight: bold;
+                    font-family: 'Courier New', Courier, monospace;
+                    color: #3b4977;
+                }
+    
+                // 动态内容
+                .content {
+                    width: 98%;
+                    margin: 1% 1%;
+                    font-size: 32px;
+                    line-height: 50px;
+                    color: #3b4977;
+                }
+    
+                // 图片列表区域
+                .image-list {
+                    width: 98%;
+                    margin: 1% 1%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+    
+                   .image {
+                       width: 170px;
+                       height: 170px;
+                       margin: 0;
+                       background-color: rgb(218, 231, 169);
+                       margin-right: 10px;
+                       margin-bottom: 10px;
+                    } 
+                }
+    
+                // 时间区域
+                .time-area {
+                    height: 70px;
+                    display: flex;
+                    align-items: center;
+                    position: relative;
+    
+                    .time {
+                        font-size: 26px;
+                        line-height: 70px;
+                        color: #696969;
+                    }
+    
+                    .delete-button {
+                        font-size: 24px;
+                        margin: 5px 10px;
+                        color: #2564c2;
+                    }
+                }
+    
+                // 点赞和评论
+                .love-comment {
+                    margin-top: 10px;
+                    background-color: #f7f7f7;
+                    width: 100%;
+    
+                    // 点赞
+                    .love {
+                        display: flex;
+                        align-items: center;
+                        padding: 6px 16px;
+                        border-bottom: 1px solid #f0f0f0;
+    
+                        .iconfont {
+                            font-size: 26px;
+                            margin-right: 5px;
+                        }
+    
+                        .love-realname {
+                            font-size: 30px;
+                            line-height: 40px;
+                            color: #3b4977;
+                        }
+                    }
+    
+                    // 评论
+                    .comment {
+                        padding: 6px 16px;
+                        border-bottom: 12px;
+                        font-size: 30px;
+    
+                        .comment-realname {
+                            color: #3b4977;
+                        }
+    
+                        .comment-content {
+                            color: #181818;
+                            line-height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
