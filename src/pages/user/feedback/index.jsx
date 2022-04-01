@@ -37,7 +37,7 @@ const Feedback = () => {
     setFeedbackType(e.detail.value);
   };
 
-  // 失去焦点直接先获取用户输入的动态内容
+  // 失去焦点直接先获取用户输入的意见反馈内容
   const getContent = (e) => {
     setInputContent(e.detail.value);
   };
@@ -54,8 +54,12 @@ const Feedback = () => {
     });
   };
 
-  // 发布动态
+  // 发布意见反馈
   const feedback = async () => {
+    if(tempImageList.length === 0){
+      postRequest();
+      return;
+    }
     // 接收 upLoadImage() 对象中返回的包含图片名称的 imageList，以便传入 postRequest中使用
     upLoadImage().then((finalImageList) => {
       postRequest(finalImageList);
@@ -65,7 +69,7 @@ const Feedback = () => {
 
   };
 
-  const postRequest = async (finalImageList) => {
+  const postRequest = async (finalImageList=[]) => {
     const { username, realname } = Taro.getStorageSync('userObj');
 
     // 1.准备数据
@@ -91,12 +95,26 @@ const Feedback = () => {
         icon: 'success',
         duration: 1500
       });
+
+      // // 调用云函数，发送短信提示意见反馈已受理
+      // Taro.cloud.callFunction({
+      //   name: 'sendMessage',
+      //   data: {
+      //     phone: username,
+      //     content: '您的反馈意见已收到！我们将尽快处理并与您联系！'
+      //   }
+      // }).then(res=>{
+      //   console.log('成功', res);
+      // }).catch(res=>{
+      //   console.log('失败', res);
+      // });
+
       setTimeout(() => {
         // 使跳转后自动重新获取数据
         Taro.switchTab({
           url: '../index',
           success:  () => { 
-            // 认证成功，跳转至动态首页后需要刷新页面，否则无法拿到最新发布的动态
+            // 认证成功，跳转至意见反馈首页后需要刷新页面，否则无法拿到最新发布的意见反馈
             const page = Taro.getCurrentPages().pop();
             page.onLoad(); 
           } 
