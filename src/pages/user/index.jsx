@@ -123,7 +123,9 @@ const User = () => {
 
   // 查看并完善和修改个人信息
   const feedback = () => {
-    console.log(feedback);
+    Taro.navigateTo({
+      url:'./feedback/index'
+    });
   };
 
   // 查看并完善和修改个人信息
