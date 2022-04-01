@@ -84,17 +84,17 @@ const Login = ()=>{
     console.log(code);
     setVerificationCode(code);
     // 调用云函数向用户发送验证码
-    // Taro.cloud.callFunction({
-    //   name: 'sendMessage',
-    //   data: {
-    //     phone: inputUsername,
-    //     code: code
-    //   }
-    // }).then(res=>{
-    //   console.log('成功', res);
-    // }).catch(res=>{
-    //   console.log('失败', res);
-    // });
+    Taro.cloud.callFunction({
+      name: 'sendMessage',
+      data: {
+        phone: inputUsername,
+        code: code 
+      }
+    }).then(res=>{
+      console.log('成功', res);
+    }).catch(res=>{
+      console.log('失败', res);
+    });
   };
 
   // 生成随机验证码

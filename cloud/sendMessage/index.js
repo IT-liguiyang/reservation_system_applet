@@ -8,7 +8,7 @@ exports.main = async (event) => {
   try {
     const result = await cloud.openapi.cloudbase.sendSms({
       env: 'reservation-system-7diwnb2d9a3a5',
-      content: '验证码为：' + event.code,
+      content: event.code,
       phoneNumberList: [
         '+86' + event.phone
       ]
