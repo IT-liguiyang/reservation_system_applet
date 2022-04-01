@@ -1,0 +1,29 @@
+.about-us {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 60%;
+  width: 100%;
+}
+.about-us .logo-edition {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about-us .logo-edition .logo {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+}
+.about-us .logo-edition .edition {
+  font-size: 32px;
+  color: #464545;
+}
+.about-us .bottom-text {
+  position: fixed;
+  bottom: 20px;
+  color: #b8b4b4;
+  font-size: 30px;
+}

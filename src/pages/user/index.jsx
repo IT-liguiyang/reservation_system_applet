@@ -100,7 +100,7 @@ const User = () => {
     });
   };
 
-  // 查看并完善和修改个人信息
+  // 查看实名认证
   const Certification = () => {
     Taro.navigateTo({
       url:'./realname-authentication/index'
@@ -114,23 +114,25 @@ const User = () => {
     });
   };
 
-  // 查看并完善和修改个人信息
+  // 查看常见问题
   const commonProblems = () => {
     Taro.navigateTo({
       url:'./common-problems/index'
     });
   };
 
-  // 查看并完善和修改个人信息
+  // 查看问题反馈
   const feedback = () => {
     Taro.navigateTo({
       url:'./feedback/index'
     });
   };
 
-  // 查看并完善和修改个人信息
+  // 查看关于我们
   const aboutUs = () => {
-    console.log(aboutUs);
+    Taro.navigateTo({
+      url:'./about-us/index'
+    });
   };
 
   // 退出登录
