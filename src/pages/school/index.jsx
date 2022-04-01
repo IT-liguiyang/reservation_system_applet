@@ -10,9 +10,9 @@ import './index.less';
 
 const School = () => {
 
-  const [schoolObj, setSchoolObj] = useState({});
-  const [acticeBar, setActiceBar] = useState(0);
-  const [announcementList, setAnnouncementList] = useState([]);
+  const [schoolObj, setSchoolObj] = useState({}); // 用于保存学校对象
+  const [acticeBar, setActiceBar] = useState(0);  // 当前选择的tab
+  const [announcementList, setAnnouncementList] = useState([]); // 学校公告列表
 
   useEffect(() => {
     // 得到点击页面传过来的一个学校对象 item
@@ -40,20 +40,24 @@ const School = () => {
     // openBooking
   } = schoolObj || {};
 
+  // 点击 tab 的回调
   const handleClick = async (value) =>{
     setActiceBar(value);
 
-    if(schoolObj && value === 2) {
+    // 若已有数据就不再请求
+    if(announcementList.length === 0 && value === 2) {
       const result = await reqAnnouncementByPublisher(school[1]);
       console.log('announcement', result);
       setAnnouncementList(result.data);
     }
   };
 
+  // 点击返回的回调
   const back = () => {
     Taro.navigateBack();
   };
 
+  // 线路规划
   const routePlan = () => {
     console.log(1111);
     // let plugin = Taro.requirePlugin('routePlan');
