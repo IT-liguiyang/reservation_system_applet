@@ -54,7 +54,7 @@ const SchoolItem = (props) => {
             <View key={item._id} className='container' onClick={()=> jumpToSchoolIndex(item)}>
               <Image className='container-image' src={config.basicImgUrl+item.image[0]}></Image>
               <View className='school'>
-                <Text className='school-name'>{item.school[1].length > 12 ? item.school[1].slice(0,12)+'...' : item.school[1]}</Text>
+                <Text className='school-name'>{item.school[1].length > 11 ? item.school[1].slice(0,11)+'...' : item.school[1]}</Text>
                 <Text className='school-address'>{item.address}</Text>
                 {
                   getOpenAreas(item.openAreasInfoStr)
