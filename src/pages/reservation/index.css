@@ -1,0 +1,186 @@
+.reservation {
+  width: 100%;
+  margin: 2%;
+}
+.reservation .next-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+}
+.reservation .next-btn .button {
+  width: 60%;
+  height: 80px;
+  margin-top: 20px;
+  color: white;
+  font-size: 35px;
+  border-radius: 45px;
+  background-color: #0099ff;
+}
+.reservation .schoolName {
+  margin: 30px 0;
+}
+.reservation .schoolName .title {
+  font-size: 30px;
+  color: #706f6e;
+  margin: 20px 0;
+}
+.reservation .schoolName .container {
+  height: auto;
+  margin: 20px 0;
+}
+.reservation .choose-date .title {
+  font-size: 30px;
+  color: #706f6e;
+  margin: 20px 0;
+}
+.reservation .choose-date .container {
+  height: 220px;
+}
+.reservation .choose-date .container .scrollItem {
+  position: relative;
+  font-size: 30px;
+  height: 170px;
+  min-width: 90px;
+  margin-right: 10px;
+  padding: 10px 20px;
+  color: #585858;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #cecbcb;
+  overflow: hidden;
+}
+.reservation .choose-date .container .scrollItem .week {
+  font-size: 32px;
+  margin: 10px 0;
+}
+.reservation .choose-date .container .scrollItem .isOpen {
+  font-size: 28px;
+}
+.reservation .choose-date .container .scrollItem .iconfont {
+  position: absolute;
+  right: -11px;
+  bottom: -11px;
+  font-size: 80px;
+  color: #666ff0;
+}
+.reservation .choose-date .container .active {
+  border: 2px solid #666ff0;
+}
+.reservation .choose-place .title {
+  font-size: 30px;
+  color: #706f6e;
+  margin: 20px 0;
+}
+.reservation .choose-place .place-container {
+  height: 100px;
+  display: flex;
+  margin: 10px 0;
+}
+.reservation .choose-place .place-container .place-scrollItem {
+  position: relative;
+  font-size: 30px;
+  height: 60px;
+  width: 140px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  color: #585858;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #cecbcb;
+  overflow: hidden;
+}
+.reservation .choose-place .place-container .place-scrollItem .placeName {
+  font-size: 32px;
+  margin: 10px 0;
+}
+.reservation .choose-place .place-container .place-scrollItem .iconfont {
+  position: absolute;
+  right: -11px;
+  bottom: -11px;
+  font-size: 80px;
+  color: #666ff0;
+}
+.reservation .choose-place .place-container .active {
+  border: 2px solid #666ff0;
+}
+.reservation .choose-time .title {
+  font-size: 30px;
+  color: #706f6e;
+  margin: 10px 0;
+}
+.reservation .choose-time .time-container {
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0;
+}
+.reservation .choose-time .time-container .time-scrollItem {
+  position: relative;
+  font-size: 30px;
+  height: 170px;
+  width: 190px;
+  margin-right: 10px;
+  padding: 5px 10px;
+  color: #585858;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid #cecbcb;
+  overflow: hidden;
+}
+.reservation .choose-time .time-container .time-scrollItem .time {
+  font-size: 28px;
+  margin: 10px 0;
+}
+.reservation .choose-time .time-container .time-scrollItem .text {
+  margin: 5px 0;
+}
+.reservation .choose-time .time-container .time-scrollItem .count {
+  font-size: 26px;
+}
+.reservation .choose-time .time-container .time-scrollItem .iconfont {
+  position: absolute;
+  right: -11px;
+  bottom: -11px;
+  font-size: 80px;
+  color: #666ff0;
+}
+.reservation .choose-time .time-container .active {
+  border: 2px solid #666ff0;
+}
+.reservation .reservation-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100px;
+  border: 1px solid #e0dddd;
+  position: fixed;
+  bottom: 0;
+  background-color: #f8f6f6;
+}
+.reservation .reservation-btn .button {
+  width: 60%;
+  height: 80px;
+  font-size: 35px;
+  border-radius: 45px;
+  background-color: #0099ff;
+}
+.reservation .reservation-btn .disable-button {
+  width: 60%;
+  height: 80px;
+  color: black;
+  font-size: 35px;
+  border-radius: 45px;
+  background-color: #bcbdbe;
+}

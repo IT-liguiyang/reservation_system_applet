@@ -1,0 +1,496 @@
+.reservation {
+  width: 100%;
+  height: 100%;
+  background-color: #eeebeb;
+}
+.reservation .at-tabs__item {
+  font-size: 33px;
+  font-weight: bold;
+}
+.reservation .showDetail .form-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  border-bottom: 2px solid #ece9e9;
+  line-height: 100px;
+  padding: 0 20px;
+}
+.reservation .showDetail .form-item .title {
+  font-size: 35px;
+  width: 22%;
+}
+.reservation .showDetail .form-item .input {
+  color: #b6b5b4;
+  width: 75%;
+  padding: 10px 20px;
+  font-size: 32px;
+}
+.reservation .showComment .head {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.reservation .showComment .head .iconfont {
+  font-size: 38px;
+}
+.reservation .showComment .head .school-name {
+  left: 0;
+  font-size: 38px;
+  font-weight: bold;
+}
+.reservation .showComment .booking-info {
+  margin: 15px 0;
+}
+.reservation .showComment .booking-info .time {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .showComment .booking-info .time .title {
+  font-size: 34px;
+  font-weight: bold;
+}
+.reservation .showComment .booking-info .time .text {
+  font-size: 32.5px;
+}
+.reservation .showComment .booking-info .place {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .showComment .booking-info .place .title {
+  font-size: 34px;
+  font-weight: bold;
+}
+.reservation .showComment .booking-info .place .text {
+  font-size: 32.5px;
+}
+.reservation .showComment .booking-info .vehicle {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .showComment .booking-info .vehicle .title {
+  font-size: 34px;
+  font-weight: bold;
+}
+.reservation .showComment .booking-info .vehicle .text {
+  font-size: 32.5px;
+}
+.reservation .showComment .comment .content {
+  margin-bottom: 20px;
+}
+.reservation .showComment .comment .content .title {
+  font-size: 34px;
+  font-weight: bold;
+}
+.reservation .showComment .comment .content .text {
+  font-size: 33px;
+}
+.reservation .showComment .comment .image {
+  margin-bottom: 20px;
+}
+.reservation .showComment .comment .image .title {
+  font-size: 34px;
+  font-weight: bold;
+}
+.reservation .showComment .comment .image .image-list {
+  width: 98%;
+  margin: 1% 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.reservation .showComment .comment .image .image-list .image {
+  width: 170px;
+  height: 170px;
+  margin: 0;
+  background-color: #dae7a9;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.reservation .showComment .comment .service {
+  display: flex;
+  margin-bottom: 20px;
+}
+.reservation .showComment .comment .service .title {
+  font-size: 34px;
+  font-weight: bold;
+}
+.reservation .showComment .comment .service .text {
+  font-size: 33px;
+}
+.reservation .showComment .comment .facility {
+  display: flex;
+}
+.reservation .showComment .comment .facility .title {
+  font-size: 34px;
+  font-weight: bold;
+}
+.reservation .showComment .comment .facility .text {
+  font-size: 33px;
+}
+.reservation .using-container {
+  width: 100%;
+  height: auto;
+}
+.reservation .using-container .noDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #727171;
+  margin-top: 100px;
+}
+.reservation .using-container .noDate .iconfont {
+  font-size: 80px;
+}
+.reservation .using-container .noDate .noDate-text {
+  font-size: 33px;
+}
+.reservation .using-container .using-item {
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 10px;
+}
+.reservation .using-container .using-item .head {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.reservation .using-container .using-item .head .iconfont {
+  font-size: 38px;
+}
+.reservation .using-container .using-item .head .school-name {
+  left: 0;
+  font-size: 38px;
+  font-weight: bold;
+}
+.reservation .using-container .using-item .head .using-status {
+  position: absolute;
+  right: 0;
+  color: green;
+}
+.reservation .using-container .using-item .booking-info {
+  margin: 15px 0;
+}
+.reservation .using-container .using-item .booking-info .time {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .using-container .using-item .booking-info .time .title {
+  font-size: 36px;
+}
+.reservation .using-container .using-item .booking-info .time .text {
+  font-size: 32.5px;
+}
+.reservation .using-container .using-item .booking-info .place {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .using-container .using-item .booking-info .place .title {
+  font-size: 36px;
+}
+.reservation .using-container .using-item .booking-info .place .text {
+  font-size: 32.5px;
+}
+.reservation .using-container .using-item .booking-info .vehicle {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .using-container .using-item .booking-info .vehicle .title {
+  font-size: 36px;
+}
+.reservation .using-container .using-item .booking-info .vehicle .text {
+  font-size: 32.5px;
+}
+.reservation .using-container .using-item .operation {
+  display: flex;
+  position: relative;
+}
+.reservation .using-container .using-item .operation .detail {
+  font-size: 35px;
+  position: absolute;
+  left: 0;
+  color: blue;
+  padding: 10px 10px;
+  line-height: normal;
+  background-color: #dfdede;
+}
+.reservation .using-container .using-item .operation .cancel {
+  font-size: 35px;
+  position: absolute;
+  right: 0;
+  color: red;
+  padding: 10px 10px;
+  line-height: normal;
+  background-color: #dfdede;
+}
+.reservation .finished-container {
+  width: 100%;
+  height: auto;
+}
+.reservation .finished-container .noDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #727171;
+  margin-top: 100px;
+}
+.reservation .finished-container .noDate .iconfont {
+  font-size: 80px;
+}
+.reservation .finished-container .noDate .noDate-text {
+  font-size: 33px;
+}
+.reservation .finished-container .finished-item {
+  height: 300px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 10px;
+}
+.reservation .finished-container .finished-item .head {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.reservation .finished-container .finished-item .head .iconfont {
+  font-size: 38px;
+}
+.reservation .finished-container .finished-item .head .school-name {
+  left: 0;
+  font-size: 38px;
+  font-weight: bold;
+}
+.reservation .finished-container .finished-item .head .finished-status {
+  position: absolute;
+  right: 0;
+  color: green;
+}
+.reservation .finished-container .finished-item .booking-info {
+  margin: 15px 0;
+}
+.reservation .finished-container .finished-item .booking-info .time {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .finished-container .finished-item .booking-info .time .title {
+  font-size: 36px;
+}
+.reservation .finished-container .finished-item .booking-info .time .text {
+  font-size: 32.5px;
+}
+.reservation .finished-container .finished-item .booking-info .place {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .finished-container .finished-item .booking-info .place .title {
+  font-size: 36px;
+}
+.reservation .finished-container .finished-item .booking-info .place .text {
+  font-size: 32.5px;
+}
+.reservation .finished-container .finished-item .booking-info .vehicle {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .finished-container .finished-item .booking-info .vehicle .title {
+  font-size: 36px;
+}
+.reservation .finished-container .finished-item .booking-info .vehicle .text {
+  font-size: 32.5px;
+}
+.reservation .finished-container .finished-item .operation {
+  display: flex;
+  position: relative;
+}
+.reservation .finished-container .finished-item .operation .rebooking {
+  font-size: 35px;
+  position: absolute;
+  left: 0;
+  padding: 10px 10px;
+  line-height: normal;
+  background-color: #dfdede;
+}
+.reservation .finished-container .finished-item .operation .comment {
+  font-size: 35px;
+  position: absolute;
+  right: 0;
+  padding: 10px 10px;
+  line-height: normal;
+  background-color: #dfdede;
+}
+.reservation .canceled-container {
+  width: 100%;
+  height: auto;
+}
+.reservation .canceled-container .noDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #727171;
+  margin-top: 100px;
+}
+.reservation .canceled-container .noDate .iconfont {
+  font-size: 80px;
+}
+.reservation .canceled-container .noDate .noDate-text {
+  font-size: 33px;
+}
+.reservation .canceled-container .canceled-item {
+  height: 250px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 10px;
+}
+.reservation .canceled-container .canceled-item .head {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.reservation .canceled-container .canceled-item .head .iconfont {
+  font-size: 38px;
+}
+.reservation .canceled-container .canceled-item .head .school-name {
+  left: 0;
+  font-size: 38px;
+  font-weight: bold;
+}
+.reservation .canceled-container .canceled-item .head .canceled-status {
+  position: absolute;
+  right: 0;
+  color: red;
+}
+.reservation .canceled-container .canceled-item .booking-info {
+  margin: 15px 0;
+}
+.reservation .canceled-container .canceled-item .booking-info .time {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .canceled-container .canceled-item .booking-info .time .title {
+  font-size: 36px;
+}
+.reservation .canceled-container .canceled-item .booking-info .time .text {
+  font-size: 32.5px;
+}
+.reservation .canceled-container .canceled-item .booking-info .place {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .canceled-container .canceled-item .booking-info .place .title {
+  font-size: 36px;
+}
+.reservation .canceled-container .canceled-item .booking-info .place .text {
+  font-size: 32.5px;
+}
+.reservation .canceled-container .canceled-item .booking-info .vehicle {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .canceled-container .canceled-item .booking-info .vehicle .title {
+  font-size: 36px;
+}
+.reservation .canceled-container .canceled-item .booking-info .vehicle .text {
+  font-size: 32.5px;
+}
+.reservation .unuse-container {
+  width: 100%;
+  height: auto;
+}
+.reservation .unuse-container .noDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #727171;
+  margin-top: 100px;
+}
+.reservation .unuse-container .noDate .iconfont {
+  font-size: 80px;
+}
+.reservation .unuse-container .noDate .noDate-text {
+  font-size: 33px;
+}
+.reservation .unuse-container .warning {
+  margin: 10px 15px;
+  font-size: 32px;
+  color: #656566;
+}
+.reservation .unuse-container .unuse-item {
+  height: 230px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px 10px;
+  padding: 10px;
+}
+.reservation .unuse-container .unuse-item .head {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.reservation .unuse-container .unuse-item .head .iconfont {
+  font-size: 38px;
+}
+.reservation .unuse-container .unuse-item .head .school-name {
+  left: 0;
+  font-size: 38px;
+  font-weight: bold;
+}
+.reservation .unuse-container .unuse-item .head .unuse-status {
+  position: absolute;
+  right: 0;
+  font-size: 33px;
+  color: red;
+}
+.reservation .unuse-container .unuse-item .booking-info {
+  margin: 15px 0;
+}
+.reservation .unuse-container .unuse-item .booking-info .time {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .unuse-container .unuse-item .booking-info .time .title {
+  font-size: 36px;
+}
+.reservation .unuse-container .unuse-item .booking-info .time .text {
+  font-size: 32.5px;
+}
+.reservation .unuse-container .unuse-item .booking-info .place {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .unuse-container .unuse-item .booking-info .place .title {
+  font-size: 36px;
+}
+.reservation .unuse-container .unuse-item .booking-info .place .text {
+  font-size: 32.5px;
+}
+.reservation .unuse-container .unuse-item .booking-info .vehicle {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+.reservation .unuse-container .unuse-item .booking-info .vehicle .title {
+  font-size: 36px;
+}
+.reservation .unuse-container .unuse-item .booking-info .vehicle .text {
+  font-size: 32.5px;
+}

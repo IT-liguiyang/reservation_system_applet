@@ -161,6 +161,94 @@
 .school .content .tabs .announcement .noDate .noDate-text {
   font-size: 33px;
 }
+.school .content .tabs .comment {
+  padding: 2%;
+  font-size: 32px;
+  color: #5a5959;
+}
+.school .content .tabs .comment .comment-item {
+  width: 96%;
+  margin: 2%;
+  display: flex;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #f0f0f0;
+}
+.school .content .tabs .comment .comment-item .comment-item-left {
+  width: 15%;
+  margin-right: 10px;
+}
+.school .content .tabs .comment .comment-item .comment-item-left .avater {
+  width: 112px;
+  height: 112px;
+  border-radius: 10px;
+  background-color: #dae7a9;
+}
+.school .content .tabs .comment .comment-item .comment-item-right {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+.school .content .tabs .comment .comment-item .comment-item-right .realname {
+  width: 98%;
+  margin: 1% 1% 0 1%;
+  font-size: 35px;
+  line-height: 50px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  color: #3b4977;
+}
+.school .content .tabs .comment .comment-item .comment-item-right .place-info {
+  font-size: 28px;
+  margin-left: 10px;
+}
+.school .content .tabs .comment .comment-item .comment-item-right .content {
+  width: 98%;
+  margin: 1% 1%;
+  font-size: 32px;
+  line-height: 50px;
+  color: #3b4977;
+  background-color: white;
+}
+.school .content .tabs .comment .comment-item .comment-item-right .image-list {
+  width: 98%;
+  margin: 1% 1%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.school .content .tabs .comment .comment-item .comment-item-right .image-list .image {
+  width: 170px;
+  height: 170px;
+  margin: 0;
+  background-color: #dae7a9;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.school .content .tabs .comment .comment-item .comment-item-right .time-area {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.school .content .tabs .comment .comment-item .comment-item-right .time-area .time {
+  font-size: 26px;
+  line-height: 70px;
+  color: #696969;
+}
+.school .content .tabs .comment .noDate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #727171;
+}
+.school .content .tabs .comment .noDate .iconfont {
+  font-size: 80px;
+}
+.school .content .tabs .comment .noDate .noDate-text {
+  font-size: 33px;
+}
 .school .content .tabs .at-tabs__item {
   font-size: 32px;
 }
@@ -177,7 +265,7 @@
   border: 1px solid #e0dddd;
   position: fixed;
   bottom: 0;
-  background-color: #eceaea;
+  background-color: #f8f6f6;
 }
 .school .reservation-btn .button {
   width: 60%;
@@ -185,4 +273,12 @@
   font-size: 35px;
   border-radius: 45px;
   background-color: #0099ff;
+}
+.school .reservation-btn .disable-button {
+  width: 60%;
+  height: 80px;
+  color: black;
+  font-size: 35px;
+  border-radius: 45px;
+  background-color: #bcbdbe;
 }

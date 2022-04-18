@@ -94,6 +94,13 @@ const User = () => {
   };
 
   // 查看并完善和修改个人信息
+  const myReservation = () => {
+    Taro.navigateTo({
+      url:'./my-reservation/index'
+    });
+  };
+
+  // 查看并完善和修改个人信息
   const personalInfo = () => {
     Taro.navigateTo({
       url:'./personal-info/index'
@@ -160,7 +167,7 @@ const User = () => {
         <Text className='personal-top-text'>{new_username||''}</Text>
       </View>
       <View className='personal-middle'>
-        <Text className='personal-middle-reservation'>
+        <Text className='personal-middle-reservation' onClick={myReservation}>
           <Text className='iconfont icon-yuyue'></Text>
           <Text>我的预约</Text>
         </Text>

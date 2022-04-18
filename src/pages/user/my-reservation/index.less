@@ -1,0 +1,624 @@
+.reservation {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(238, 235, 235);
+
+    .at-tabs__item {
+        font-size: 33px;
+        font-weight: bold;
+    }
+
+    .showDetail {
+        .form-item {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            border-bottom: 2px solid #ece9e9;
+            line-height: 100px;
+            padding: 0 20px;
+
+            .title {
+                font-size: 35px;
+                width: 22%;
+            }
+    
+            .input {
+                color: rgb(182, 181, 180);
+                width: 75%;
+                padding: 10px 20px;
+                font-size: 32px;
+                // background-color: rgba(252, 240, 240, 0.904);
+            }
+    
+        }
+    }
+
+    .showComment {
+        .head {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .iconfont {
+                font-size: 38px;
+            }
+
+            .school-name {
+                left: 0;
+                font-size: 38px;
+                font-weight: bold;
+            }
+
+        }
+
+        .booking-info {
+            margin: 15px 0;
+
+            .time {
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+
+
+                .title {
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+
+                .text {
+                    font-size: 32.5px;
+                }
+            }
+
+            .place {
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+
+                .title {
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+
+                .text {
+                    font-size: 32.5px;
+                }
+            }
+
+            .vehicle {
+                display: flex;
+                align-items: center;
+                margin: 5px 0;
+
+                .title {
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+
+                .text {
+                    font-size: 32.5px;
+                }
+            }
+        }
+
+        .comment {
+            .content {
+                margin-bottom: 20px;
+
+                .title {
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+
+                .text {
+                    font-size: 33px;
+                }
+            }
+
+            .image {
+                margin-bottom: 20px;
+
+                .title {
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+
+                // 图片列表区域
+                .image-list {
+                    width: 98%;
+                    margin: 1% 1%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+    
+                   .image {
+                       width: 170px;
+                       height: 170px;
+                       margin: 0;
+                       background-color: rgb(218, 231, 169);
+                       margin-right: 10px;
+                       margin-bottom: 10px;
+                    } 
+                }
+            }
+
+            .service {
+                display: flex;
+                margin-bottom: 20px;
+
+                .title {
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+
+                .text {
+                    font-size: 33px;
+                }
+            }
+
+            .facility {
+                display: flex;
+
+                .title {
+                    font-size: 34px;
+                    font-weight: bold;
+                }
+
+                .text {
+                    font-size: 33px;
+                }
+            }
+        }
+    }
+    
+    .using-container {
+        width: 100%;
+        height: auto;
+
+        .noDate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #727171;
+            margin-top: 100px;
+
+            .iconfont {
+                font-size: 80px;
+            }
+
+            .noDate-text {
+                font-size: 33px;
+            }
+        }
+
+        .using-item {
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px 10px;
+            padding: 10px;
+
+            .head {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .iconfont {
+                    font-size: 38px;
+                }
+
+                .school-name {
+                    left: 0;
+                    font-size: 38px;
+                    font-weight: bold;
+                }
+
+                .using-status {
+                    position: absolute;
+                    right: 0;
+                    color: green;
+                }
+            }
+
+            .booking-info {
+                margin: 15px 0;
+
+                .time {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .place {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .vehicle {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+            }
+
+            .operation {
+                display: flex;
+                position: relative;
+
+                .detail {
+                    font-size: 35px;
+                    position: absolute;
+                    left: 0;
+                    color: blue;
+                    padding: 10px 10px;
+                    line-height: normal;
+                    background-color: rgb(223, 222, 222);
+                }
+
+                .cancel {
+                    font-size: 35px;
+                    position: absolute;
+                    right: 0;
+                    color: red;
+                    padding: 10px 10px;
+                    line-height: normal;
+                    background-color: rgb(223, 222, 222);
+                }
+            }
+        }
+    }
+
+    .finished-container {
+        width: 100%;
+        height: auto;
+
+        .noDate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #727171;
+            margin-top: 100px;
+
+            .iconfont {
+                font-size: 80px;
+            }
+
+            .noDate-text {
+                font-size: 33px;
+            }
+        }
+
+        .finished-item {
+            height: 300px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px 10px;
+            padding: 10px;
+
+            .head {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .iconfont {
+                    font-size: 38px;
+                }
+
+                .school-name {
+                    left: 0;
+                    font-size: 38px;
+                    font-weight: bold;
+                }
+
+                .finished-status {
+                    position: absolute;
+                    right: 0;
+                    color: green;
+                }
+            }
+
+            .booking-info {
+                margin: 15px 0;
+
+                .time {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .place {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .vehicle {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+            }
+
+            .operation {
+                display: flex;
+                position: relative;
+
+                .rebooking {
+                    font-size: 35px;
+                    position: absolute;
+                    left: 0;
+                    padding: 10px 10px;
+                    line-height: normal;
+                    background-color: rgb(223, 222, 222);
+                }
+
+                .comment {
+                    font-size: 35px;
+                    position: absolute;
+                    right: 0;
+                    padding: 10px 10px;
+                    line-height: normal;
+                    background-color: rgb(223, 222, 222);
+                }
+            }
+        }
+    }
+
+    .canceled-container {
+        width: 100%;
+        height: auto;
+
+        .noDate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #727171;
+            margin-top: 100px;
+
+            .iconfont {
+                font-size: 80px;
+            }
+
+            .noDate-text {
+                font-size: 33px;
+            }
+        }
+
+        .canceled-item {
+            height: 250px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px 10px;
+            padding: 10px;
+
+            .head {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .iconfont {
+                    font-size: 38px;
+                }
+
+                .school-name {
+                    left: 0;
+                    font-size: 38px;
+                    font-weight: bold;
+                }
+
+                .canceled-status {
+                    position: absolute;
+                    right: 0;
+                    color: red;
+                }
+            }
+
+            .booking-info {
+                margin: 15px 0;
+
+                .time {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .place {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .vehicle {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .unuse-container {
+        width: 100%;
+        height: auto;
+
+        .noDate {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #727171;
+            margin-top: 100px;
+
+            .iconfont {
+                font-size: 80px;
+            }
+
+            .noDate-text {
+                font-size: 33px;
+            }
+        }
+
+        .warning {
+            margin: 10px 15px;
+            font-size: 32px;
+            color: rgb(101, 101, 102);
+        }
+
+        .unuse-item {
+            height: 230px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 20px 10px;
+            padding: 10px;
+
+            .head {
+                display: flex;
+                align-items: center;
+                position: relative;
+
+                .iconfont {
+                    font-size: 38px;
+                }
+
+                .school-name {
+                    left: 0;
+                    font-size: 38px;
+                    font-weight: bold;
+                }
+
+                .unuse-status {
+                    position: absolute;
+                    right: 0;
+                    font-size: 33px;
+                    color: red;
+                }
+            }
+
+            .booking-info {
+                margin: 15px 0;
+
+                .time {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .place {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+
+                .vehicle {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px 0;
+
+                    .title {
+                        font-size: 36px;
+                    }
+
+                    .text {
+                        font-size: 32.5px;
+                    }
+                }
+            }
+        }
+    }
+}
