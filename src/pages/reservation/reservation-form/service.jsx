@@ -8,3 +8,6 @@ export const reqBookingInfoBySchoolId = (school_id) => Request('/manage/booking_
 
 // 通过学校 id 更新预约设置的 open_info
 export const reqUpdateOpenInfoInfoBySchoolId = ({newOpenInfo,school_id}) => Request('/manage/booking_info/update_open_info', {newOpenInfo, school_id}, 'POST');
+
+// 添加动态（用户发布动态分享）
+export const reqAddMessage = (messageObj) => Request('/manage/message/add', messageObj, 'POST');

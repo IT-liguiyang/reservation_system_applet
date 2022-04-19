@@ -57,6 +57,7 @@
   margin-right: 10px;
 }
 .personal .personal-middle .personal-middle-notice {
+  position: relative;
   width: 50%;
   display: flex;
   justify-content: center;
@@ -65,6 +66,20 @@
   font-size: 45px;
   padding-top: 10px;
   margin-right: 10px;
+}
+.personal .personal-middle .personal-middle-notice .unread-amount {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  top: -10px;
+  right: 35px;
+  border-radius: 50%;
+  color: white;
+  background-color: red;
 }
 .personal .personal-bottom {
   margin: 2%;

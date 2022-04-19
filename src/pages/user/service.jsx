@@ -8,3 +8,6 @@ export const reqDeleteImg = (name) => Request('/manage/img/delete', {name}, 'POS
 
 // 更新用户
 export const reqUpdateUser = ({userObj, userId}) => Request('/manage/user/update', {userObj, userId}, 'POST');
+
+// 获取当前登录的用户信息
+export const reqUnreadMessage = () => Request('/manage/message/unread_list');

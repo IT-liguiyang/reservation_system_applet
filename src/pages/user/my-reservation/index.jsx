@@ -35,7 +35,7 @@ const Reservation = () => {
     const current = pages[pages.length - 1];
     const eventChannel = current.getOpenerEventChannel();
     eventChannel.on('activeBar', async (data) => {
-      console.log('接收到的学校对象', data.data);
+      console.log('接收a到的ctiveBar', data.data);
       if(data.data) setActiceBar(data.data);
     });
     getPersonalReservationInfo();

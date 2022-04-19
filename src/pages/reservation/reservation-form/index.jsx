@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro';
 import { View, Form, Text, Input, Button, Picker } from '@tarojs/components';
 import { AtModal } from 'taro-ui';
 import moment from 'moment';
-import { reqAddReservationInfo, reqBookingInfoBySchoolId, reqUpdateOpenInfoInfoBySchoolId } from './service';
+import { reqAddReservationInfo, reqBookingInfoBySchoolId, reqUpdateOpenInfoInfoBySchoolId, reqAddMessage } from './service';
 import './index.less';
 
 const ReservationForm = () => {
@@ -93,18 +93,30 @@ const ReservationForm = () => {
         });
       }
 
-      // setTimeout(() => {
-      //   // 使跳转后自动重新获取数据
-      //   Taro.switchTab({
-      //     url: '../index',
-      //     success:  () => { 
-      //       // 认证成功，跳转至个人信息首页后需要刷新页面，否则无法拿到最新的信息
-      //       const page = Taro.getCurrentPages().pop();
-      //       page.onLoad(); 
-      //     } 
-      //   });
-        
-      // }, 1500);
+      // 向用户发送预约成功的消息（向用户信息中插入一条记录）
+      const messageObj = {
+        publisher: res_school,
+        acceptor: username,
+        pub_time: moment().format('YYYY-MM-DD HH:mm'),  // 发布时间,
+        pub_content:'尊敬的'+ realname+ '先生/女士，您的预约申请我们已经收到，请您仔细阅读预定须知并按时到校锻炼，若未能到场请提前取消，否则逾期未使用将影响您的下次预约，感谢您的配合，谢谢！',
+        isRead: false
+      };
+  
+      console.log(messageObj);
+  
+      // 4. 提交添加的请求
+      const addResult = await reqAddMessage(messageObj);
+      console.log(addResult);
+
+      if(addResult.status ===0) {
+        setTimeout(() => {
+          // 跳转到我的预约页面
+          Taro.navigateTo({
+            url: '../../user/my-reservation/index',
+          });
+          
+        }, 1500);
+      }
     } else if(result.status === 1){
       // 说明: 某个用户用户 某天的某个时段只能选择预约某一个学校的某个场馆，若选择其他的则会预约失败，并提示已预约
       // 服务器端如何判断？如果 res_username, res_date, (res_time) 同时存在一样的记录，说明今天的当前时段已经预约了场馆，不能再预约

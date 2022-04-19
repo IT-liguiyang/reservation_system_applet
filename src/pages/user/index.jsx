@@ -3,19 +3,20 @@ import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
 import './index.less';
 
-import { reqUpdateUser } from './service';
+import { reqUpdateUser, reqUnreadMessage } from './service';
 import { BASE_IMG_URL } from '../../utils/constants';
 
 const User = () => {
 
   const userId = Taro.getStorageSync('userId');  // 从缓存获取不会改变的 userId
-  const [ new_username, SetUsername ] = useState();  // 头像
-  const [ new_head_portrait, SetHeadPortrait ] = useState([]);  // 头像
-  const [ new_realname, SetRealname ] = useState('');  // 姓名
-  const [ new_ID_number, SetID_number ] = useState('');  // 身份证
-  const [ new_address, SetAddress ] = useState('');  // 地址
-  const [ new_profession, SetProfession ] = useState('');  // 职业
-  const [ new_realname_authentication, SetRealnameAuthentication ] = useState('');  // 实名认证
+  const [ new_username, setUsername ] = useState();  // 头像
+  const [ new_head_portrait, setHeadPortrait ] = useState([]);  // 头像
+  const [ new_realname, setRealname ] = useState('');  // 姓名
+  const [ new_ID_number, setID_number ] = useState('');  // 身份证
+  const [ new_address, setAddress ] = useState('');  // 地址
+  const [ new_profession, setProfession ] = useState('');  // 职业
+  const [ new_realname_authentication, setRealnameAuthentication ] = useState('');  // 实名认证
+  const [ unreadAmount, setUnreadAmount ] = useState(0);  // 未读消息数量
 
   // 获取当前登录用户的信息
   const getUserInfo = async () => {
@@ -23,13 +24,13 @@ const User = () => {
     const userObj_from_storage = Taro.getStorageSync('userObj');
     const { username, head_portrait, realname, ID_number, address, profession, realname_authentication } = userObj_from_storage || {};
     console.log('777777', realname_authentication);
-    SetUsername(username);
-    SetHeadPortrait(head_portrait);
-    SetRealname(realname);
-    SetID_number(ID_number);
-    SetAddress(address);
-    SetProfession(profession);
-    SetRealnameAuthentication(realname_authentication);
+    setUsername(username);
+    setHeadPortrait(head_portrait);
+    setRealname(realname);
+    setID_number(ID_number);
+    setAddress(address);
+    setProfession(profession);
+    setRealnameAuthentication(realname_authentication);
 
     // 当所有信息都完善时，就不显示 “点击完善信息” 按钮
     if (userId&&username&&realname&&ID_number&&address&&profession){
@@ -43,8 +44,18 @@ const User = () => {
 
   useEffect(() => {
     getUserInfo();
+    getUnreadAmount();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [new_realname_authentication]);
+
+  // 获取未读消息的数量
+  const getUnreadAmount = async () => {
+    const result = await reqUnreadMessage();
+    console.log(result);
+    if(result.status === 0) {
+      setUnreadAmount(result.data.length);
+    }
+  };
 
   // 更换头像
   const addhead_portrait = async () => {
@@ -61,7 +72,7 @@ const User = () => {
             const { status, data } = JSON.parse(res1.data);
             if ( status === 0 ){
               // 1.更新头像显示
-              SetHeadPortrait([data.name]);
+              setHeadPortrait([data.name]);
 
               // 2.构造用户对象，实际上只改变头像的名字，形如 image-1647701020379.png
               const userObj = {
@@ -93,10 +104,17 @@ const User = () => {
     });
   };
 
-  // 查看并完善和修改个人信息
+  // 查看我的预约
   const myReservation = () => {
     Taro.navigateTo({
       url:'./my-reservation/index'
+    });
+  };
+
+  // 查看我的预约
+  const myMessage = () => {
+    Taro.navigateTo({
+      url:'./my-message/index'
     });
   };
 
@@ -171,9 +189,12 @@ const User = () => {
           <Text className='iconfont icon-yuyue'></Text>
           <Text>我的预约</Text>
         </Text>
-        <Text className='personal-middle-notice'>
+        <Text className='personal-middle-notice' onClick={myMessage}>
           <Text className='iconfont icon-tongzhi'></Text>
           <Text>我的消息</Text>
+          {
+            unreadAmount === 0? '':( <Text className='unread-amount'>{unreadAmount}</Text>)
+          }
         </Text>
       </View>
       <View className='personal-bottom'>

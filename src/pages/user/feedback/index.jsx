@@ -15,15 +15,15 @@ import {
 
 import moment from 'moment';
 import { BASE_IMG_URL } from '../../../utils/constants';
-import { reqAddFeedback, reqFeedbackByUsername } from './service';
+import { reqAddFeedback, reqFeedbackByUsername, reqAddMessage } from './service';
 import './index.less';
 
 const Feedback = () => {
 
   const [ tempImageList, setTempImageList ] = useState([]);  // 临时存放图片的数组
   const [ input_content, setInputContent ] = useState(''); // 发布的内容
-  const [ feedbackType, setFeedbackType ] = useState(''); // 发布的内容
-  const [ feedbackAcceptor, setFeedbackAcceptor ] = useState(''); // 发布的内容
+  const [ feedbackType, setFeedbackType ] = useState(''); // 意见反馈类型
+  const [ feedbackAcceptor, setFeedbackAcceptor ] = useState(''); // 意见反馈受理人
   const [ acticeBar, setActiceBar ] = useState(0);  // 设置当前选择的tab
   const [ myFeedbackList, setMyFeedbackList ] = useState([]);  // 设置当前选择的tab
 
@@ -109,18 +109,37 @@ const Feedback = () => {
       //   console.log('失败', res);
       // });
 
-      setTimeout(() => {
-        // 使跳转后自动重新获取数据
-        Taro.switchTab({
-          url: '../index',
-          success:  () => { 
-            // 认证成功，跳转至意见反馈首页后需要刷新页面，否则无法拿到最新发布的意见反馈
-            const page = Taro.getCurrentPages().pop();
-            page.onLoad(); 
-          } 
-        });
-        
-      }, 1500);
+      // 向用户发送信息（向用户信息中插入一条记录）
+      const messageObj = {
+        publisher: feedbackAcceptor,
+        acceptor: username,
+        pub_time: moment().format('YYYY-MM-DD HH:mm'),  // 发布时间,
+        pub_content:'尊敬的'+ realname+ '先生/女士，您的反馈意见我们已经收到，我们将尽快处理您反馈的问题，并将处理结果以电话的形式告知您，请保持您的电话畅通，谢谢！',
+        isRead: false
+      };
+  
+      console.log(messageObj);
+  
+      // 4. 提交添加的请求
+      const addResult = await reqAddMessage(messageObj);
+      console.log(addResult);
+
+      if(addResult.status ===0) {
+        setTimeout(() => {
+          // 使跳转后自动重新获取数据
+          // Taro.navigateTo({
+          //   url: '../my-message/index',
+          //   // success:  () => { 
+          //   //   // 认证成功，跳转至意见反馈首页后需要刷新页面，否则无法拿到最新发布的意见反馈
+          //   //   const page = Taro.getCurrentPages().pop();
+          //   //   page.onLoad(); 
+          //   // } 
+          // });
+          handleClick(1);
+          
+        }, 1500);
+      }
+      
     }
   };
 
@@ -164,10 +183,11 @@ const Feedback = () => {
     setTempImageList(result);
   };
 
+  // 点击切换 tab 的回调
   const handleClick = async (value) => {
     const { username } = Taro.getStorageSync('userObj');
     setActiceBar(value);
-    if(value === 1 && myFeedbackList.length ===0 ) {
+    if(value === 1) {
       const result = await reqFeedbackByUsername(username);
       setMyFeedbackList(result.data);
     }
