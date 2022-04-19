@@ -44,6 +44,13 @@ const Dynamic = () => {
     setIsShowOperationPannel('block');
   };
 
+  // 跳转到 个人中心 我的动态 页面
+  const goMyReservation = () => {
+    Taro.navigateTo({
+      url: '../user/my-dynamic/index'
+    });
+  };
+
   // 跳转到发布动态页面
   const goPublish = () => {
     Taro.navigateTo({
@@ -181,7 +188,7 @@ const Dynamic = () => {
       <View className='dynamic-head'>
         <Image className='dynamic-head-image' src={head_image}></Image>
         <View>
-          <View className='my-info'>
+          <View className='my-info' onClick={goMyReservation}>
             <Image className='my-info-image' src={BASE_IMG_URL+head_portrait}></Image>
           </View>
           <View className='go-publish' onClick={goPublish}>
