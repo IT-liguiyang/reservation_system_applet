@@ -44,6 +44,7 @@ const Reservation = () => {
     // 得到新的开放信息
     formNewOpenInfo();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bookingInfo]);
 
   // 得到当前月的日期数组
