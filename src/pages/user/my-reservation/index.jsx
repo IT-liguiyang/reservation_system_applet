@@ -39,6 +39,7 @@ const Reservation = () => {
       if(data.data) setActiceBar(data.data);
     });
     getPersonalReservationInfo();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const tabList = [{ title: '待使用' }, { title: '已完成' }, { title: '已取消' }, { title: '未使用' }];

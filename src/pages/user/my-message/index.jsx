@@ -15,6 +15,7 @@ const Reservation = () => {
 
   useEffect(() => {
     getMessage();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // 获取消息
