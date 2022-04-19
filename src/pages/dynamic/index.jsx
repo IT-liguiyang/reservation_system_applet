@@ -4,7 +4,7 @@ import { View, Image, Text, Input, Button } from '@tarojs/components';
 
 import { reqDynamicSharings, reqUpdateDynamicSharing } from './service';
 import { BASE_IMG_URL } from '../../utils/constants';
-import head_image from '../../static/dynamic/sports2.png';
+import head_image from '../../static/dynamic/head.png';
 import './index.less';
 
 const Dynamic = () => {
