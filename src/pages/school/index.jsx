@@ -228,8 +228,9 @@ const School = () => {
             </AtTabsPane>
             <AtTabsPane className='comment' current={acticeBar} index={3}>
               {
-                reservationInfoList.length !== 0 && reservationInfoList[0].comment.length !== 0 ? (
+                reservationInfoList.length !== 0 ? (
                   reservationInfoList.map((item) => {
+                    if(item.comment.length ===0) return;
                     return(
                       <View key={item._id} className='comment-item'>
                         <View className='comment-item-left'>
