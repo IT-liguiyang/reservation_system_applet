@@ -49,7 +49,7 @@ const SchoolItem = (props) => {
   return(
     <View>
       {
-        props.schoolList.map((item) => {
+        props.schoolList.slice(0,10).map((item) => {
           return (
             <View key={item._id} className='container' onClick={()=> jumpToSchoolIndex(item)}>
               <Image className='container-image' src={config.basicImgUrl+item.image[0]}></Image>

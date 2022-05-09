@@ -77,7 +77,7 @@ export default defineAppConfig({
   },
   permission: {
     'scope.userLocation': {
-      desc: '系统将获取您的定位用于线路规划'
+      desc: '您的位置将用于系统定位'
     }
   }
 });
