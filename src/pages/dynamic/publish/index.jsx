@@ -125,7 +125,7 @@ const DynamicPublish = () => {
   return(
     <View className='publish'>
       <View className='textarea-container'>
-        <Textarea className='textarea' onBlur={getContent} placeholder='这一刻的想法...' maxlength='200'></Textarea>
+        <Textarea className='textarea' onBlur={getContent} placeholder='记录有关运动的想法...' maxlength='200'></Textarea>
       </View>
       <View className='imageupload-container'>
         <View className='image-list'>

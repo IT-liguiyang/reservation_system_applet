@@ -3,7 +3,7 @@ import Taro from '@tarojs/taro';
 import { View, Image, Text } from '@tarojs/components';
 
 import { reqDynamicSharingByusername, reqDeleteDynamicSharing } from './service';
-import head_image from '../../../static/person-center/my-dynamic.png';
+import head_image from '../../../static/person-center/dynamic-head.png';
 import { BASE_IMG_URL } from '../../../utils/constants';
 import './index.less';
 
