@@ -42,7 +42,9 @@ const Index = () => {
     tel: '18275166092',
   });
 
-  const districtList = ['市直属','观山湖区','云岩区','南明区','乌当区','白云区','花溪区','贵安新区','清镇市','修文县','开阳县','开阳县','息烽县'];
+  const districtList = [
+    '市直属','观山湖区','云岩区','南明区','乌当区','白云区','花溪区','贵安新区','清镇市','修文县','开阳县','开阳县','息烽县'
+  ];
   
   // 各行政区接壤邻接矩阵
   const adjacent_matrix = [
@@ -67,21 +69,18 @@ const Index = () => {
     let district_name_list = []; // 记录当前区域的接壤区域矩阵
     districtList.map((item, index) => {
       if(item === dis) {
-        district_index = index;
-        district_index_list = adjacent_matrix[index];
+        district_index = index; // 得到当前区域的索引
+        district_index_list = adjacent_matrix[index]; // 根据当前区域的索引，得到它接壤区域的领接矩阵
       }
     });
-    console.log('district_index_list', district_index_list);
     district_index_list.map((item, index) => {
       if(item === 1 && index !== district_index){
-        district_name_list.push(districtList[index]);
+        district_name_list.push(districtList[index]); // 得到所有接壤区域的名称
       }
     });
-    console.log('district_name_list', district_name_list);
     // 根据附近接壤区域名称查询附近的所有学校
     const result = await reqHotSchools(district_name_list);
-    console.log('res-NearSchoolList', result.data);
-    const distanceList = [];
+    const distanceList = []; // 存放计算距离后的学校列表
     // 分别计算距离
     result.data.map((item) => {
       const distance = Math.sqrt(Math.pow(item.latitude*1-latitude, 2)+Math.pow(item.longitude*1-longitude, 2));
@@ -89,7 +88,6 @@ const Index = () => {
     });
     // 根据距离进行排序
     distanceList.sort(compare('distance'));
-    console.log('distanceList', distanceList);
     setFinalNearSchoolList(distanceList);
   };
 

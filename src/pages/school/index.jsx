@@ -17,6 +17,11 @@ const School = () => {
   const [ announcementList, setAnnouncementList ] = useState([]); // 学校公告列表
   const [ reservationInfoList, setReservationInfoList ] = useState([]); // 学校评价列表
 
+  Taro.getApp().mtj.trackEvent('visit_school', {
+    school_name: '111', 
+    school_id: '111', 
+  });
+
   useEffect(() => {
     // 获取当前登录的用户对象
     setUserObj(Taro.getStorageSync('userObj'));

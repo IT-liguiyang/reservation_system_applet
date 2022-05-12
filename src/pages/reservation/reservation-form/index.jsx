@@ -15,7 +15,7 @@ const ReservationForm = () => {
   // const [ bookingInfo, setBookingInfo] = useState([]); // 存放学校的开放信息（用于更新）
 
   const userObj_from_storage = Taro.getStorageSync('userObj');
-  const { username, head_portrait, realname } = userObj_from_storage || {};
+  const { username, head_portrait, realname, ID_number } = userObj_from_storage || {};
 
   useEffect(() => {
     // 得到点击页面传过来的一个学校对象 item
@@ -54,6 +54,7 @@ const ReservationForm = () => {
     const reservationInfoObj = {
       'res_realname': realname,
       'res_username': username,
+      'ID_number': ID_number,
       'res_avater': head_portrait,
       'res_school_id': res_school_id,
       'res_school_name': res_school, 
